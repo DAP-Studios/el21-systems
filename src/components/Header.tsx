@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -34,7 +38,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <div className="bg-gradient-primary h-10 w-10 rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">21</span>
               </div>
@@ -42,25 +46,42 @@ const Header = () => {
                 <h1 className="text-xl font-bold text-foreground">El 21 Systems</h1>
                 <p className="text-xs text-muted-foreground">Temperature Control Solutions</p>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-foreground hover:text-primary font-medium transition-colors">
-                Home
-              </a>
-              <a href="#products" className="text-foreground hover:text-primary font-medium transition-colors">
-                Products
-              </a>
-              <a href="#about" className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link 
+                to="/" 
+                className={`font-medium transition-colors ${
+                  isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                Home & Shop
+              </Link>
+              <Link 
+                to="/about" 
+                className={`font-medium transition-colors ${
+                  isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
                 About Us
-              </a>
-              <a href="#services" className="text-foreground hover:text-primary font-medium transition-colors">
+              </Link>
+              <Link 
+                to="/services" 
+                className={`font-medium transition-colors ${
+                  isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
                 Services
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary font-medium transition-colors">
-                Contact
-              </a>
+              </Link>
+              <Link 
+                to="/research" 
+                className={`font-medium transition-colors ${
+                  isActive('/research') ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                R&D
+              </Link>
             </nav>
 
             {/* CTA Button */}
@@ -84,41 +105,42 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-border">
               <nav className="flex flex-col space-y-4">
-                <a
-                  href="#home"
-                  className="text-foreground hover:text-primary font-medium transition-colors py-2"
+                <Link
+                  to="/"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
-                </a>
-                <a
-                  href="#products"
-                  className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Products
-                </a>
-                <a
-                  href="#about"
-                  className="text-foreground hover:text-primary font-medium transition-colors py-2"
+                  Home & Shop
+                </Link>
+                <Link
+                  to="/about"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About Us
-                </a>
-                <a
-                  href="#services"
-                  className="text-foreground hover:text-primary font-medium transition-colors py-2"
+                </Link>
+                <Link
+                  to="/services"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
-                </a>
-                <a
-                  href="#contact"
-                  className="text-foreground hover:text-primary font-medium transition-colors py-2"
+                </Link>
+                <Link
+                  to="/research"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive('/research') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact
-                </a>
+                  R&D
+                </Link>
                 <Button className="btn-secondary mt-4">
                   Get Quote
                 </Button>

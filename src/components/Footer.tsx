@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -42,19 +43,18 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <div className="space-y-2">
               {[
-                { label: 'Home', href: '#home' },
-                { label: 'Products', href: '#products' },
-                { label: 'About Us', href: '#about' },
-                { label: 'Services', href: '#services' },
-                { label: 'Contact', href: '#contact' }
+                { label: 'Home & Shop', href: '/' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Services', href: '/services' },
+                { label: 'R&D', href: '/research' }
               ].map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="block text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
