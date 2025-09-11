@@ -199,7 +199,7 @@
   }
 
   .btn-outline-primary {
-    @apply border-2 border-primary text-primary bg-gradient-accent hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold;
+    @apply border-2 border-primary text-primary bg-accent hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold;
     transition: var(--transition-bounce);
   }
 
