@@ -2,65 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* El 21 Systems Design System - Professional Industrial Theme */
+/* El 21 Systems Design System - Modern Industrial Theme */
 
 @layer base {
   :root {
-    /* Brand Colors - Professional & Trustworthy */
-    --background: 0 0% 100%;
-    --foreground: 210 20% 15%;
+    /* Enhanced Background System */
+    --background: 0 0% 99%;
+    --foreground: 215 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 20% 15%;
+    --card-foreground: 215 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 15%;
+    --popover-foreground: 215 25% 12%;
 
-    /* Primary Brand - Professional Blue */
-    --primary: 221 83% 35%;
+    /* Premium Primary - Deep Industrial Blue */
+    --primary: 220 90% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 221 83% 30%;
+    --primary-hover: 220 90% 40%;
+    --primary-light: 220 70% 85%;
 
-    /* Secondary Brand - Energy Orange */
-    --secondary: 43 96% 48%;
+    /* Dynamic Secondary - Electric Orange */
+    --secondary: 25 95% 55%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 43 96% 42%;
+    --secondary-hover: 25 95% 50%;
+    --secondary-light: 25 85% 90%;
 
     /* Success/Trust Green */
-    --success: 145 63% 42%;
+    --success: 142 75% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Neutral Professional */
-    --muted: 220 13% 96%;
-    --muted-foreground: 220 9% 46%;
+    /* Enhanced Neutral System */
+    --muted: 220 15% 97%;
+    --muted-foreground: 220 12% 45%;
 
-    --accent: 220 13% 96%;
-    --accent-foreground: 210 20% 15%;
+    --accent: 220 20% 95%;
+    --accent-foreground: 215 25% 12%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 83% 35%;
+    --border: 220 15% 88%;
+    --input: 220 15% 94%;
+    --ring: 220 90% 45%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Industrial Design Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(221 83% 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(43 96% 52%));
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 35%) 0%, hsl(221 60% 25%) 100%);
-    --gradient-trust: linear-gradient(135deg, hsl(145 63% 42%) 0%, hsl(145 55% 35%) 100%);
+    /* Premium Gradient System */
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 45%) 0%, hsl(220 95% 35%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(30 90% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 90% 25%) 0%, hsl(220 85% 35%) 50%, hsl(220 80% 45%) 100%);
+    --gradient-trust: linear-gradient(135deg, hsl(142 75% 45%) 0%, hsl(142 70% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220 20% 95%) 0%, hsl(220 25% 92%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
 
-    /* Professional Shadows */
-    --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    --shadow-brand: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    /* Enhanced Shadow System */
+    --shadow-soft: 0 2px 8px -2px rgb(0 0 0 / 0.08), 0 1px 4px -1px rgb(0 0 0 / 0.06);
+    --shadow-medium: 0 8px 25px -5px rgb(0 0 0 / 0.1), 0 4px 10px -3px rgb(0 0 0 / 0.08);
+    --shadow-large: 0 20px 40px -10px rgb(0 0 0 / 0.15), 0 8px 16px -4px rgb(0 0 0 / 0.1);
+    --shadow-brand: 0 12px 35px -8px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.15);
 
-    /* Smooth Professional Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-quick: all 0.15s ease-out;
+    /* Premium Animation System */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -125,59 +131,127 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
   }
 
-  /* Professional Typography Scale */
+  /* Premium Typography System */
   .text-hero {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+    @apply text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight;
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .text-section-title {
-    @apply text-2xl md:text-3xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
   }
 
   .text-product-title {
-    @apply text-lg md:text-xl font-semibold leading-tight;
+    @apply text-xl md:text-2xl font-bold leading-tight;
   }
 
-  /* Professional Buttons */
+  .text-subtitle {
+    @apply text-lg md:text-xl leading-relaxed text-muted-foreground;
+  }
+
+  /* Premium Button System */
   .btn-primary {
     background: var(--gradient-primary);
-    @apply text-primary-foreground border-0 shadow-md hover:shadow-lg;
+    @apply text-primary-foreground border-0 px-8 py-4 rounded-xl font-semibold;
+    box-shadow: var(--shadow-brand);
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-large);
+    @apply scale-105;
   }
 
   .btn-secondary {
     background: var(--gradient-secondary);
-    @apply text-secondary-foreground border-0 shadow-md hover:shadow-lg;
+    @apply text-secondary-foreground border-0 px-8 py-4 rounded-xl font-semibold;
+    box-shadow: var(--shadow-medium);
     transition: var(--transition-smooth);
+  }
+
+  .btn-secondary:hover {
+    box-shadow: var(--shadow-large);
+    @apply scale-105;
   }
 
   .btn-outline-primary {
-    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground;
+    @apply border-2 border-primary text-primary bg-gradient-accent hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold;
+    transition: var(--transition-bounce);
+  }
+
+  .btn-outline-primary:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-brand);
+  }
+
+  /* Premium Card System */
+  .card-professional {
+    background: var(--gradient-surface);
+    @apply border border-border rounded-2xl p-8 backdrop-blur-sm;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+
+  .card-professional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 1rem 1rem 0 0;
+    opacity: 0;
     transition: var(--transition-smooth);
   }
 
-  /* Professional Cards */
-  .card-professional {
-    @apply bg-card border border-border rounded-lg p-6;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+  .card-professional:hover::before {
+    opacity: 1;
   }
 
   .card-professional:hover {
-    box-shadow: var(--shadow-medium);
-    @apply -translate-y-1;
+    box-shadow: var(--shadow-large);
+    @apply -translate-y-2;
   }
 
-  /* Trust Indicators */
+  /* Enhanced Trust Elements */
   .trust-badge {
     background: var(--gradient-trust);
-    @apply text-success-foreground px-3 py-1 rounded-full text-sm font-medium;
+    @apply text-success-foreground px-4 py-2 rounded-full text-sm font-bold;
+    box-shadow: var(--shadow-soft);
   }
 
-  /* Professional Gradients */
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30 rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Premium Gradient Backgrounds */
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
@@ -190,11 +264,61 @@
     background: var(--gradient-hero);
   }
 
-  /* Industrial Grid Pattern */
+  .bg-gradient-surface {
+    background: var(--gradient-surface);
+  }
+
+  /* Enhanced Pattern System */
   .grid-pattern {
     background-image: 
-      linear-gradient(rgba(var(--foreground) / 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(var(--foreground) / 0.02) 1px, transparent 1px);
-    background-size: 20px 20px;
+      radial-gradient(circle at 25px 25px, rgba(var(--primary) / 0.1) 2px, transparent 2px),
+      linear-gradient(rgba(var(--primary) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px, 25px 25px, 25px 25px;
+  }
+
+  .floating-elements {
+    position: relative;
+  }
+
+  .floating-elements::before,
+  .floating-elements::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-elements::before {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+    animation-delay: -2s;
+  }
+
+  .floating-elements::after {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -150px;
+    animation-delay: -4s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 30px hsl(var(--secondary) / 0.3);
   }
 }

@@ -60,39 +60,45 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4">Our Products</Badge>
-          <h2 className="text-section-title mb-6">
-            Professional Temperature Control Solutions
+    <section id="products" className="py-24 bg-gradient-surface relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-30"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Enhanced Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-primary text-primary-foreground border-0">
+            Premium Product Range
+          </Badge>
+          <h2 className="text-section-title mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Advanced Temperature Control Solutions
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Discover our comprehensive range of precision instruments designed for 
-            industrial temperature control, process monitoring, and automation.
+          <p className="text-xl text-muted-foreground leading-relaxed font-medium">
+            Engineered for precision, built for reliability. Discover our comprehensive range of 
+            professional-grade instruments trusted by India's leading industries.
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Enhanced Products Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
           {products.map((product) => (
-            <Card key={product.id} className="card-professional group cursor-pointer">
-              <CardHeader className="pb-4">
-                <div className="aspect-square rounded-lg overflow-hidden mb-4 bg-muted/50">
+            <Card key={product.id} className="card-professional group cursor-pointer overflow-hidden glow-primary hover:glow-secondary">
+              <CardHeader className="pb-6">
+                <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-accent relative">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary" className="text-xs">
+                <div className="flex items-center justify-between mb-4">
+                  <Badge className="bg-gradient-secondary text-secondary-foreground border-0 px-4 py-2 font-bold">
                     {product.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-success">{product.price}</span>
+                  <span className="text-3xl font-black text-success glow-secondary">{product.price}</span>
                 </div>
-                <CardTitle className="text-product-title">{product.name}</CardTitle>
+                <CardTitle className="text-product-title text-2xl font-bold">{product.name}</CardTitle>
               </CardHeader>
               
               <CardContent className="space-y-4">
@@ -131,14 +137,14 @@ const ProductsSection = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col gap-2 pt-4">
-                  <Button className="btn-primary w-full group">
-                    Get Quote
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                {/* Enhanced Action Buttons */}
+                <div className="flex flex-col gap-3 pt-6">
+                  <Button className="btn-primary w-full group glow-primary">
+                    <span className="relative z-10">Get Instant Quote</span>
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-all duration-300" />
                   </Button>
-                  <Button variant="outline" size="sm" className="w-full">
-                    View Details
+                  <Button variant="outline" className="w-full btn-outline-primary">
+                    <span className="relative z-10">View Technical Specs</span>
                   </Button>
                 </div>
               </CardContent>
@@ -146,19 +152,21 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        {/* Industry Applications */}
-        <div className="bg-background rounded-2xl p-8 border border-border">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        {/* Enhanced Industry Applications */}
+        <div className="glass-card p-12 glow-primary">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Award className="h-6 w-6 text-primary" />
-                <h3 className="text-section-title">Industries We Serve</h3>
+              <div className="flex items-center gap-3 mb-6">
+                <Award className="h-8 w-8 text-primary glow-primary" />
+                <h3 className="text-section-title bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Industries We Serve
+                </h3>
               </div>
-              <p className="text-muted-foreground mb-6">
-                Our temperature control solutions are trusted by leading industries 
-                across India for their reliability and precision.
+              <p className="text-lg text-muted-foreground mb-8 font-medium">
+                Our cutting-edge temperature control solutions power India's most demanding 
+                industrial applications with unmatched precision and reliability.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-5">
                 {[
                   'Plastic Manufacturing',
                   'Chemical Processing',
@@ -169,28 +177,31 @@ const ProductsSection = () => {
                   'Laboratory Equipment',
                   'Process Automation'
                 ].map((industry, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <div className="h-2 w-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">{industry}</span>
+                  <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-all duration-300">
+                    <div className="h-3 w-3 bg-gradient-primary rounded-full glow-primary"></div>
+                    <span className="font-semibold text-foreground">{industry}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gradient-primary rounded-xl p-6 text-primary-foreground">
-              <h4 className="text-xl font-bold mb-4">Need Custom Solutions?</h4>
-              <p className="mb-6 text-primary-foreground/90">
-                We design and manufacture custom temperature control solutions 
-                tailored to your specific industrial requirements.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="secondary" className="flex-1">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Expert
-                </Button>
-                <Button variant="outline" className="flex-1 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  Send Requirements
-                </Button>
+            <div className="bg-gradient-hero rounded-2xl p-10 text-primary-foreground glow-secondary relative overflow-hidden">
+              <div className="absolute inset-0 grid-pattern opacity-20"></div>
+              <div className="relative z-10">
+                <h4 className="text-3xl font-black mb-6">Need Custom Solutions?</h4>
+                <p className="mb-8 text-primary-foreground/95 text-lg font-medium leading-relaxed">
+                  We engineer bespoke temperature control solutions that perfectly match 
+                  your unique industrial requirements and specifications.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button className="btn-secondary flex-1 glow-secondary">
+                    <Phone className="mr-3 h-5 w-5" />
+                    <span className="relative z-10">Call Our Experts</span>
+                  </Button>
+                  <Button variant="outline" className="flex-1 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold">
+                    <span className="relative z-10">Send Requirements</span>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
