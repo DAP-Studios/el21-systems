@@ -152,60 +152,6 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        {/* Enhanced Industry Applications */}
-        <div className="glass-card p-12 glow-primary">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Award className="h-8 w-8 text-primary glow-primary" />
-                <h3 className="text-section-title bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Industries We Serve
-                </h3>
-              </div>
-              <p className="text-lg text-muted-foreground mb-8 font-medium">
-                Our cutting-edge temperature control solutions power India's most demanding 
-                industrial applications with unmatched precision and reliability.
-              </p>
-              <div className="grid grid-cols-2 gap-5">
-                {[
-                  'Plastic Manufacturing',
-                  'Chemical Processing',
-                  'Food & Beverage',
-                  'Pharmaceutical',
-                  'Rubber Industries',
-                  'Textile Manufacturing',
-                  'Laboratory Equipment',
-                  'Process Automation'
-                ].map((industry, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-all duration-300">
-                    <div className="h-3 w-3 bg-gradient-primary rounded-full glow-primary"></div>
-                    <span className="font-semibold text-foreground">{industry}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="bg-gradient-hero rounded-2xl p-10 text-primary-foreground glow-secondary relative overflow-hidden">
-              <div className="absolute inset-0 grid-pattern opacity-20"></div>
-              <div className="relative z-10">
-                <h4 className="text-3xl font-black mb-6">Need Custom Solutions?</h4>
-                <p className="mb-8 text-primary-foreground/95 text-lg font-medium leading-relaxed">
-                  We engineer bespoke temperature control solutions that perfectly match 
-                  your unique industrial requirements and specifications.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="btn-secondary flex-1 glow-secondary">
-                    <Phone className="mr-3 h-5 w-5" />
-                    <span className="relative z-10">Call Our Experts</span>
-                  </Button>
-                  <Button variant="outline" className="flex-1 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold">
-                    <span className="relative z-10">Send Requirements</span>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

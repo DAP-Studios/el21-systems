@@ -56,7 +56,15 @@ const Header = () => {
                   isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
-                Home & Shop
+                Home
+              </Link>
+              <Link 
+                to="/shop" 
+                className={`font-medium transition-colors ${
+                  isActive('/shop') ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                Shop
               </Link>
               <Link 
                 to="/about" 
@@ -112,7 +120,16 @@ const Header = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home & Shop
+                  Home
+                </Link>
+                <Link
+                  to="/shop"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive('/shop') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Shop
                 </Link>
                 <Link
                   to="/about"

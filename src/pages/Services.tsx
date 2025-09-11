@@ -315,6 +315,52 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Industries We Serve */}
+      <section className="py-16 bg-gradient-surface">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-primary text-primary-foreground border-0">
+              Industries We Serve
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Powering India's Leading Industries
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Our cutting-edge temperature control solutions drive success across diverse industrial sectors
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {[
+              { name: 'Plastic Manufacturing', icon: '🏭', desc: 'Precision molding control' },
+              { name: 'Chemical Processing', icon: '🧪', desc: 'Safe reaction monitoring' },
+              { name: 'Food & Beverage', icon: '🍽️', desc: 'Quality preservation' },
+              { name: 'Pharmaceutical', icon: '💊', desc: 'Compliance & purity' },
+              { name: 'Rubber Industries', icon: '⚡', desc: 'Vulcanization control' },
+              { name: 'Textile Manufacturing', icon: '🧵', desc: 'Dyeing & finishing' },
+              { name: 'Laboratory Equipment', icon: '🔬', desc: 'Research accuracy' },
+              { name: 'Process Automation', icon: '🤖', desc: 'Smart manufacturing' }
+            ].map((industry, idx) => (
+              <div key={idx} className="bg-card rounded-xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group">
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{industry.icon}</div>
+                <h3 className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors">{industry.name}</h3>
+                <p className="text-sm text-muted-foreground">{industry.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 text-center">
+            <h3 className="text-2xl font-bold mb-4">Need Custom Solutions?</h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Our engineering team specializes in creating tailored temperature control solutions for unique industrial requirements.
+            </p>
+            <Button className="btn-primary">
+              Discuss Your Project
+            </Button>
+          </div>
+        </div>
+      </section>
       </div>
     </Layout>
   );
