@@ -62,6 +62,22 @@ const HeroSection = () => {
                 Watch Demo
               </Button>
             </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-white">15+</div>
+                <div className="text-sm text-white/80">Years Experience</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-white">500+</div>
+                <div className="text-sm text-white/80">Happy Clients</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-white">24/7</div>
+                <div className="text-sm text-white/80">Support</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
