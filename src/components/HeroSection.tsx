@@ -7,13 +7,10 @@ import heroImage from '@/assets/hero-industrial.jpg';
 const HeroSection = () => {
   return (
     <section id="home" className="relative bg-background overflow-hidden">
-      {/* Geometric Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
-                           radial-gradient(circle at 75% 75%, hsl(var(--secondary)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px, 40px 40px'
-        }}></div>
+      {/* Premium Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background via-50% to-secondary/10">
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-bl from-secondary/5 via-transparent to-primary/5"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
