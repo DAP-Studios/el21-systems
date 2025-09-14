@@ -19,6 +19,14 @@ import {
   Award
 } from 'lucide-react';
 
+import ImageScroller from '@/components/ImageScroller';
+
+// Import images
+import aiController from '@/assets/ai-7981-controller.jpg';
+import blProgrammer from '@/assets/bl-886-programmer.jpg';
+import piIndicator from '@/assets/pi-772-indicator.jpg';
+import heroIndustrial from '@/assets/hero-industrial.jpg';
+
 const Services = () => {
   const mainServices = [
     {
@@ -359,6 +367,62 @@ const Services = () => {
               Discuss Your Project
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Service Gallery */}
+      <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+              Our Service Excellence Gallery
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See our expert technicians in action, delivering professional installation and maintenance services
+            </p>
+          </div>
+
+          <ImageScroller 
+            images={[
+              {
+                src: heroIndustrial,
+                alt: "Installation Service",
+                title: "Professional Installation",
+                description: "Expert on-site installation by certified technicians"
+              },
+              {
+                src: aiController,
+                alt: "Technical Support",
+                title: "24/7 Technical Support",
+                description: "Round-the-clock assistance for all your needs"
+              },
+              {
+                src: blProgrammer,
+                alt: "Maintenance Service",
+                title: "Preventive Maintenance",
+                description: "Regular maintenance to ensure optimal performance"
+              },
+              {
+                src: piIndicator,
+                alt: "Quality Testing",
+                title: "Quality Assurance",
+                description: "Rigorous testing and validation processes"
+              },
+              {
+                src: heroIndustrial,
+                alt: "Training Program",
+                title: "Operator Training",
+                description: "Comprehensive training for your technical team"
+              },
+              {
+                src: aiController,
+                alt: "Custom Solutions",
+                title: "Custom Manufacturing",
+                description: "Tailored solutions for unique requirements"
+              }
+            ]}
+            height="h-72"
+          />
         </div>
       </section>
       </div>

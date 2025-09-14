@@ -20,6 +20,14 @@ import {
   Gauge
 } from 'lucide-react';
 
+import ImageScroller from '@/components/ImageScroller';
+
+// Import images
+import aiController from '@/assets/ai-7981-controller.jpg';
+import blProgrammer from '@/assets/bl-886-programmer.jpg';
+import piIndicator from '@/assets/pi-772-indicator.jpg';
+import heroIndustrial from '@/assets/hero-industrial.jpg';
+
 const RnD = () => {
   const researchAreas = [
     {
@@ -397,6 +405,62 @@ const RnD = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* R&D Facility Gallery */}
+      <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+              R&D Facility & Innovation Lab
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Take a virtual tour of our state-of-the-art research and development facilities
+            </p>
+          </div>
+
+          <ImageScroller 
+            images={[
+              {
+                src: heroIndustrial,
+                alt: "Research Lab",
+                title: "Advanced Research Laboratory",
+                description: "Cutting-edge equipment for temperature control research"
+              },
+              {
+                src: aiController,
+                alt: "Testing Facility",
+                title: "Environmental Testing Chambers",
+                description: "Testing temperature controllers under extreme conditions"
+              },
+              {
+                src: blProgrammer,
+                alt: "Prototyping Lab",
+                title: "Rapid Prototyping Center",
+                description: "3D printing and rapid development capabilities"
+              },
+              {
+                src: piIndicator,
+                alt: "Innovation Center",
+                title: "Innovation Development Center",
+                description: "Where breakthrough technologies are born"
+              },
+              {
+                src: heroIndustrial,
+                alt: "Quality Lab",
+                title: "Quality Assurance Lab",
+                description: "Rigorous testing and validation processes"
+              },
+              {
+                src: aiController,
+                alt: "Clean Room",
+                title: "Clean Room Manufacturing",
+                description: "Precision manufacturing in controlled environment"
+              }
+            ]}
+            height="h-72"
+          />
         </div>
       </section>
       </div>

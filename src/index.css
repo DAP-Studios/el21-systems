@@ -280,6 +280,22 @@
     background: var(--gradient-surface);
   }
 
+  .bg-gradient-purple {
+    background: var(--gradient-purple);
+  }
+
+  .bg-gradient-cyan {
+    background: var(--gradient-cyan);
+  }
+
+  .bg-gradient-pink {
+    background: var(--gradient-pink);
+  }
+
+  .bg-gradient-rainbow {
+    background: var(--gradient-rainbow);
+  }
+
   /* Enhanced Pattern System */
   .grid-pattern {
     background-image: 
@@ -323,6 +339,20 @@
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Animation for image scroller */
+  @keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll-x {
+    animation: scroll-x 30s linear infinite;
+  }
+
+  .animate-scroll-x:hover {
+    animation-play-state: paused;
   }
 
   /* Glow Effects */

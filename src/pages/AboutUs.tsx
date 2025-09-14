@@ -313,6 +313,93 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      {/* Owner/Leadership Section */}
+      <section className="py-20 bg-gradient-to-br from-accent-purple/5 via-accent-cyan/5 to-accent-pink/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">Meet Our Leadership</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Visionary leaders driving innovation and excellence in industrial temperature control
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <Card className="card-professional bg-gradient-to-br from-card to-accent-purple/5 border border-accent-purple/20">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center text-4xl font-bold text-white">
+                    RJ
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl font-bold mb-2">Rajesh Joshi</h3>
+                    <Badge className="mb-4 bg-gradient-to-r from-primary to-accent-purple text-white border-0">
+                      Founder & CEO
+                    </Badge>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      With over 20 years of experience in industrial automation, Rajesh founded El 21 Systems 
+                      with a vision to provide world-class temperature control solutions to Indian industries. 
+                      He holds an M.Tech in Control Systems from IIT Bombay.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="font-semibold text-primary">Experience</div>
+                        <div className="text-muted-foreground">20+ Years</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-primary">Education</div>
+                        <div className="text-muted-foreground">M.Tech IIT Bombay</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="card-professional bg-gradient-to-br from-card to-accent-cyan/5 border border-accent-cyan/20">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-32 h-32 bg-gradient-to-br from-accent-cyan to-secondary rounded-full flex items-center justify-center text-4xl font-bold text-white">
+                    SP
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl font-bold mb-2">Suresh Patel</h3>
+                    <Badge className="mb-4 bg-gradient-to-r from-accent-cyan to-secondary text-white border-0">
+                      CTO & Co-Founder
+                    </Badge>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      Suresh leads our technical innovation and R&D initiatives. A PhD in Electrical Engineering 
+                      from NIT Surat, he has 18+ years of experience in industrial control systems and holds 
+                      15+ patents in temperature control technology.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="font-semibold text-accent-cyan">Patents</div>
+                        <div className="text-muted-foreground">15+ Filed</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-accent-cyan">Education</div>
+                        <div className="text-muted-foreground">PhD NIT Surat</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Card className="card-professional bg-gradient-to-r from-accent-pink/10 to-accent-purple/10 border border-accent-pink/20 max-w-4xl mx-auto">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-accent-pink to-accent-purple bg-clip-text text-transparent">
+                  "Our mission is to empower Indian manufacturing with precision temperature control solutions that drive productivity and innovation."
+                </h3>
+                <p className="text-muted-foreground">- Rajesh Joshi & Suresh Patel, Founders</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
       </div>
     </Layout>
   );

@@ -131,10 +131,86 @@ const Shop = () => {
         "Temperature Range": "0-100°C",
         "Outputs": "4 Relay, 2 Analog"
       }
+    },
+    {
+      id: 7,
+      name: "HT-990 Heat Treatment Controller",
+      price: "₹85,999",
+      originalPrice: "₹95,000",
+      image: aiController,
+      category: "Controllers",
+      rating: 4.9,
+      reviews: 87,
+      inStock: true,
+      features: ["Multi-Zone Control", "Recipe Management", "Data Analytics", "Safety Interlocks"],
+      description: "Advanced heat treatment controller for metallurgy and automotive industries with precise multi-zone control.",
+      specifications: {
+        "Zones": "Up to 16 zones",
+        "Temperature Range": "Room temp to 1200°C",
+        "Accuracy": "±0.5°C",
+        "Communication": "Ethernet, Modbus TCP"
+      }
+    },
+    {
+      id: 8,
+      name: "SM-441 Smart Monitor",
+      price: "₹22,999",
+      originalPrice: "₹26,500",
+      image: piIndicator,
+      category: "Monitors",
+      rating: 4.4,
+      reviews: 156,
+      inStock: true,
+      features: ["Cloud Connectivity", "Mobile App", "Real-time Alerts", "Historical Data"],
+      description: "IoT-enabled temperature monitor with cloud connectivity and mobile app for remote monitoring.",
+      specifications: {
+        "Connectivity": "WiFi, 4G, Ethernet",
+        "Sensors": "Up to 8 inputs",
+        "Cloud Storage": "1 year included",
+        "Mobile App": "iOS & Android"
+      }
+    },
+    {
+      id: 9,
+      name: "CL-623 Chiller Controller",
+      price: "₹67,999",
+      originalPrice: "₹75,000",
+      image: blProgrammer,
+      category: "Controllers",
+      rating: 4.6,
+      reviews: 92,
+      inStock: true,
+      features: ["Energy Optimization", "Predictive Control", "Fault Diagnostics", "Remote Access"],
+      description: "Intelligent chiller controller with energy optimization and predictive maintenance capabilities.",
+      specifications: {
+        "Cooling Capacity": "10-500 kW",
+        "Efficiency": "Up to 30% savings",
+        "Control Type": "PID + Predictive",
+        "Interface": "7-inch touchscreen"
+      }
+    },
+    {
+      id: 10,
+      name: "FC-334 Furnace Controller",
+      price: "₹125,999",
+      originalPrice: "₹140,000",
+      image: aiController,
+      category: "Controllers",
+      rating: 4.8,
+      reviews: 64,
+      inStock: false,
+      features: ["High Temperature", "Multi-Program", "Safety Systems", "Data Logging"],
+      description: "Professional furnace controller for high-temperature applications with advanced safety features.",
+      specifications: {
+        "Max Temperature": "1800°C",
+        "Programs": "100 recipes",
+        "Safety": "Triple redundancy",
+        "Certification": "UL, CE marked"
+      }
     }
   ];
 
-  const categories = ['all', 'Controllers', 'Programmers', 'Indicators', 'Calibrators', 'Transmitters'];
+  const categories = ['all', 'Controllers', 'Programmers', 'Indicators', 'Calibrators', 'Transmitters', 'Monitors'];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -158,15 +234,15 @@ const Shop = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-background via-background to-secondary/20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-background via-accent-purple/10 to-accent-cyan/10">
+        <div className="absolute inset-0 bg-gradient-rainbow opacity-10" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30 px-6 py-2 text-sm font-medium">
+            <Badge className="mb-6 bg-gradient-to-r from-accent-purple to-accent-pink text-white border-0 px-6 py-2 text-sm font-medium">
               Professional Shop
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               Industrial Equipment Store
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
