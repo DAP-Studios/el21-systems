@@ -13,7 +13,6 @@ const Home = () => {
     <Layout>
       <HeroSection />
       <WhyChooseUsSection />
-      <FeaturesSection />
       <ProductsSection />
       <IndustryApplicationsSection />
       <TestimonialsSection />

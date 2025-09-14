@@ -14,37 +14,37 @@ const Header = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-4 text-sm">
+      <div className="bg-gradient-to-r from-primary via-accent-purple to-accent-cyan text-white py-3 px-4 text-sm">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1">
-              <Phone className="h-3 w-3" />
-              <span>+91 98765 43210</span>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+              <Phone className="h-4 w-4" />
+              <span className="font-medium">+91 98765 43210</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Mail className="h-3 w-3" />
-              <span>info@el21systems.com</span>
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+              <Mail className="h-4 w-4" />
+              <span className="font-medium">info@el21systems.com</span>
             </div>
           </div>
-          <div className="flex items-center gap-1">
-            <MapPin className="h-3 w-3" />
-            <span>Surat, Gujarat, India</span>
+          <div className="flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+            <MapPin className="h-4 w-4" />
+            <span className="font-medium">Surat, Gujarat, India</span>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
+      <header className="bg-white/95 border-b border-border/50 sticky top-0 z-50 backdrop-blur-lg shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="bg-gradient-primary h-10 w-10 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">21</span>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="bg-gradient-to-br from-primary via-accent-purple to-accent-cyan h-12 w-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-black text-xl">21</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">El 21 Systems</h1>
-                <p className="text-xs text-muted-foreground">Temperature Control Solutions</p>
+                <h1 className="text-2xl font-black bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">El 21 Systems</h1>
+                <p className="text-xs text-muted-foreground font-medium">Temperature Control Solutions</p>
               </div>
             </Link>
 
@@ -94,7 +94,7 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button className="btn-secondary">
+              <Button className="bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                 Get Quote
               </Button>
             </div>

@@ -63,34 +63,52 @@ const WhyChooseUsSection = () => {
 
         {/* Stats Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 mb-4 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
-                <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">
-                  {stat.number}
-                </div>
-                <div className="font-semibold text-foreground mb-1">
-                  {stat.label}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.description}
+          {stats.map((stat, index) => {
+            const gradients = [
+              'from-primary to-accent-purple',
+              'from-accent-cyan to-secondary', 
+              'from-accent-pink to-primary',
+              'from-secondary to-success'
+            ];
+            return (
+              <div key={index} className="text-center group">
+                <div className={`bg-gradient-to-br ${gradients[index]}/10 rounded-2xl p-8 mb-4 group-hover:${gradients[index]}/20 transition-all duration-300 hover:scale-105`}>
+                  <div className={`text-4xl lg:text-5xl font-bold bg-gradient-to-r ${gradients[index]} bg-clip-text text-transparent mb-2`}>
+                    {stat.number}
+                  </div>
+                  <div className="font-semibold text-foreground mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.description}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const colors = [
+              { bg: 'from-primary to-accent-purple', icon: 'text-primary' },
+              { bg: 'from-accent-cyan to-secondary', icon: 'text-accent-cyan' },
+              { bg: 'from-success to-accent-cyan', icon: 'text-success' },
+              { bg: 'from-accent-purple to-accent-pink', icon: 'text-accent-purple' },
+              { bg: 'from-secondary to-accent-pink', icon: 'text-secondary' },
+              { bg: 'from-accent-pink to-primary', icon: 'text-accent-pink' }
+            ];
+            const colorScheme = colors[index % colors.length];
+            
             return (
               <div 
                 key={index} 
-                className="group bg-card border rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group bg-card border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className={`h-16 w-16 bg-${feature.color}/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className={`h-8 w-8 text-${feature.color}`} />
+                <div className={`h-16 w-16 bg-gradient-to-br ${colorScheme.bg}/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:${colorScheme.bg}/20`}>
+                  <Icon className={`h-8 w-8 ${colorScheme.icon}`} />
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-3 text-foreground">
