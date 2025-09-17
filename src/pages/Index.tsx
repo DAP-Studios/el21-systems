@@ -1,23 +1,22 @@
 import React from 'react';
-import Header from '@/components/Header';
+import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
+import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import ProductsSection from '@/components/ProductsSection';
+import IndustryApplicationsSection from '@/components/IndustryApplicationsSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import AboutSection from '@/components/AboutSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <ProductsSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      <HeroSection />
+      <WhyChooseUsSection />
+      <ProductsSection />
+      <IndustryApplicationsSection />
+      <TestimonialsSection />
+      <AboutSection />
+    </Layout>
   );
 };
 

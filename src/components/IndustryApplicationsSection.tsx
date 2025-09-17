@@ -76,32 +76,37 @@ const IndustryApplicationsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <Badge className="mb-4">Industry Applications</Badge>
-          <h2 className="text-section-title mb-6">
+    <section className="py-24 bg-gradient-surface relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Enhanced Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-purple text-accent-purple-foreground border-0">
+            Industry Applications
+          </Badge>
+          <h2 className="text-section-title mb-8 bg-gradient-to-r from-accent-purple via-primary to-accent-cyan bg-clip-text text-transparent">
             Serving Diverse Industries Across India
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed font-medium">
             Our temperature control solutions are trusted by leading companies across multiple 
             industries, from small-scale operations to large manufacturing plants.
           </p>
         </div>
 
-        {/* Industry Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Enhanced Industry Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
           {industries.map((industry, index) => (
-            <Card key={index} className="card-professional group hover:shadow-xl transition-all duration-300">
+            <Card key={index} className="card-professional group cursor-pointer overflow-hidden glow-primary hover:glow-secondary">
               <CardContent className="p-6">
-                {/* Industry Header */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`p-3 rounded-lg ${industry.color} text-white group-hover:scale-110 transition-transform`}>
-                    <industry.icon className="h-6 w-6" />
+                 {/* Industry Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 rounded-2xl bg-gradient-primary text-primary-foreground group-hover:scale-110 transition-all duration-300 glow-primary">
+                    <industry.icon className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent-purple group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {industry.name}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -111,13 +116,13 @@ const IndustryApplicationsSection = () => {
                 </div>
 
                 {/* Applications */}
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm mb-3 text-primary">Key Applications:</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                <div className="mb-6">
+                  <h4 className="font-semibold text-sm mb-4 bg-gradient-to-r from-accent-cyan to-accent-purple bg-clip-text text-transparent">Key Applications:</h4>
+                  <div className="grid grid-cols-2 gap-3">
                     {industry.applications.map((app, appIndex) => (
                       <div key={appIndex} className="flex items-center gap-2">
-                        <CheckCircle className="h-3 w-3 text-success" />
-                        <span className="text-xs text-muted-foreground">{app}</span>
+                        <CheckCircle className="h-4 w-4 text-success" />
+                        <span className="text-sm text-muted-foreground font-medium">{app}</span>
                       </div>
                     ))}
                   </div>
@@ -136,11 +141,11 @@ const IndustryApplicationsSection = () => {
           ))}
         </div>
 
-        {/* Benefits Section */}
-        <div className="bg-background rounded-2xl p-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Enhanced Benefits Section */}
+        <div className="bg-gradient-surface rounded-3xl p-12 glow-primary">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-primary">
+              <h3 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
                 Why Industries Choose Our Solutions
               </h3>
               <div className="space-y-4">
@@ -152,42 +157,42 @@ const IndustryApplicationsSection = () => {
                 ))}
               </div>
               
-              <div className="mt-8">
-                <Button className="btn-primary group">
+              <div className="mt-10">
+                <Button className="btn-primary group glow-primary">
                   Explore Industry Solutions
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-all duration-300" />
                 </Button>
               </div>
             </div>
 
-            <div className="bg-gradient-primary rounded-xl p-8 text-primary-foreground">
-              <h4 className="text-xl font-bold mb-4">Custom Solutions Available</h4>
-              <p className="mb-6 text-primary-foreground/90">
+            <div className="bg-gradient-rainbow rounded-2xl p-10 text-white glow-secondary">
+              <h4 className="text-2xl font-bold mb-6">Custom Solutions Available</h4>
+              <p className="mb-8 text-white/90 text-lg leading-relaxed">
                 Every industry has unique requirements. Our engineering team works closely 
                 with you to develop custom temperature control solutions that meet your 
                 specific needs and compliance requirements.
               </p>
               
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm">Free technical consultation</span>
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="text-white font-medium">Free technical consultation</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm">Custom programming and configuration</span>
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="text-white font-medium">Custom programming and configuration</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm">On-site installation and training</span>
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="text-white font-medium">On-site installation and training</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm">Comprehensive warranty and support</span>
+                  <CheckCircle className="h-5 w-5 text-white" />
+                  <span className="text-white font-medium">Comprehensive warranty and support</span>
                 </div>
               </div>
 
-              <Button variant="secondary" className="w-full mt-6">
+              <Button className="w-full mt-8 btn-secondary glow-secondary">
                 Request Custom Solution
               </Button>
             </div>

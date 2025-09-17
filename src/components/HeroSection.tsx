@@ -39,7 +39,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-black leading-none tracking-tight">
                 <span className="block text-white">Industrial</span>
-                <span className="block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-accent-purple via-accent-cyan to-accent-pink bg-clip-text text-transparent">
                   Temperature
                 </span>
                 <span className="block text-white">Excellence</span>
@@ -47,7 +47,7 @@ const HeroSection = () => {
               
               <p className="text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
                 Advanced temperature control solutions engineered for India's manufacturing sector. 
-                <span className="text-primary font-semibold"> Trusted by 500+ companies</span> across diverse industries.
+                <span className="bg-gradient-to-r from-accent-cyan to-accent-purple bg-clip-text text-transparent font-bold"> Trusted by 500+ companies</span> across diverse industries.
               </p>
             </div>
 
