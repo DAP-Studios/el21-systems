@@ -152,14 +152,18 @@ const Services = () => {
     <Layout showContactSection={false}>
       <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-secondary text-secondary-foreground">Our Services</Badge>
-            <h1 className="text-hero mb-6">
+      <section className="relative pt-32 pb-16 bg-gradient-surface">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
+              Professional Services
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               Comprehensive Industrial Support
             </h1>
-            <p className="text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-medium">
               From custom manufacturing to 24/7 technical support, we provide end-to-end 
               services to ensure your temperature control systems perform at their best.
             </p>
