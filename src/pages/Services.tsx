@@ -152,7 +152,7 @@ const Services = () => {
     <Layout showContactSection={false}>
       <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-surface">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-primary/20 via-accent-cyan/10 to-secondary/20">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         
         <div className="container mx-auto px-4 relative z-10">

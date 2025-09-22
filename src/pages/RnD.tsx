@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import ImageScroller from '@/components/ImageScroller';
 import { 
   Lightbulb, 
   Microscope, 
@@ -19,8 +20,6 @@ import {
   Shield,
   Gauge
 } from 'lucide-react';
-
-import ImageScroller from '@/components/ImageScroller';
 
 // Import images
 import aiController from '@/assets/ai-7981-controller.jpg';
@@ -165,7 +164,7 @@ const RnD = () => {
     <Layout showContactSection={false}>
       <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-surface">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-accent-purple/20 via-primary/10 to-accent-cyan/20">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         
         <div className="container mx-auto px-4 relative z-10">
