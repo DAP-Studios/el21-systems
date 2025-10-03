@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Award, Target, Users, Zap, CheckCircle, Globe, Clock, Shield, Factory, TrendingUp } from 'lucide-react';
+import { Award, Target, Users, Zap, CheckCircle, Globe, Clock, Shield, Factory, TrendingUp, Mail, Phone, Linkedin } from 'lucide-react';
 
 const AboutUs = () => {
   const achievements = [
@@ -322,37 +322,101 @@ const AboutUs = () => {
       <section className="py-20 bg-gradient-to-br from-accent-purple/5 via-accent-cyan/5 to-accent-pink/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">Meet Our Leadership</h2>
+            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">Meet Our Founder</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Visionary leaders driving innovation and excellence in industrial temperature control
+              Visionary leader driving innovation and excellence in industrial temperature control
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <Card className="card-professional bg-gradient-to-br from-card to-accent-purple/5 border border-accent-purple/20">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center text-4xl font-bold text-white">
-                    RJ
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold mb-2">Rajesh Joshi</h3>
-                    <Badge className="mb-4 bg-gradient-to-r from-primary to-accent-purple text-white border-0">
-                      Founder & CEO
-                    </Badge>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      With over 20 years of experience in industrial automation, Rajesh founded El 21 Systems 
-                      with a vision to provide world-class temperature control solutions to Indian industries. 
-                      He holds an M.Tech in Control Systems from IIT Bombay.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="font-semibold text-primary">Experience</div>
-                        <div className="text-muted-foreground">20+ Years</div>
+          <div className="max-w-5xl mx-auto">
+            <Card className="card-professional bg-gradient-to-br from-card to-accent-purple/5 border border-accent-purple/20 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-5 gap-0">
+                  {/* Photo Section */}
+                  <div className="lg:col-span-2 bg-gradient-to-br from-primary to-accent-purple p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      {/* Placeholder for photo - replace with actual image */}
+                      <div className="w-62 h-62 mx-auto bg-white/10 rounded-full flex items-center justify-center text-6xl font-bold text-white mb-6 border-4 border-white/20">
+                        <img
+                          src="/assets/image/sailesh.jpg"
+                          alt="Sailesh Rathod"
+                          className="w-full h-full object-cover rounded-full"
+                        />
                       </div>
-                      <div>
-                        <div className="font-semibold text-primary">Education</div>
-                        <div className="text-muted-foreground">M.Tech IIT Bombay</div>
+                      <div className="flex justify-center mb-4">
+                        <div className="bg-white/20 p-3 rounded-lg">
+                          <Globe className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-white mb-2">Sailesh Rathod</h3>
+                      <Badge className="bg-white/20 text-white border-0 mb-4">
+                        Founder & CEO
+                      </Badge>
+                      
+                      {/* Contact Info */}
+                      <div className="space-y-3 mt-6">
+                        <div className="flex items-center justify-center gap-2 text-white/90">
+                          <Mail className="h-4 w-4" />
+                          <span className="text-sm">sailesh@el21systems.com</span>
+                        </div>
+                        <div className="flex items-center justify-center gap-2 text-white/90">
+                          <Phone className="h-4 w-4" />
+                          <span className="text-sm">+91 98765 43210</span>
+                        </div>
+                        {/* <div className="flex items-center justify-center gap-2 text-white/90">
+                          <Linkedin className="h-4 w-4" />
+                          <span className="text-sm">linkedin.com/in/saileshrathod</span>
+                        </div> */}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* About Section */}
+                  <div className="lg:col-span-3 p-8 lg:p-12">
+                    <h4 className="text-2xl font-bold mb-6 text-primary">About Me</h4>
+                    
+                    <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+                      <p>
+                        With over 20 years of experience in industrial automation and temperature control systems, 
+                        I founded El 21 Systems in 2009 with a vision to provide world-class automation solutions 
+                        to Indian industries at affordable prices.
+                      </p>
+                      <p>
+                        My journey began as an electrical engineer working with multinational corporations, where 
+                        I witnessed the gap between international technology standards and what was available to 
+                        Indian manufacturers. This inspired me to start El 21 Systems, bridging that gap by offering 
+                        precision instruments and reliable automation equipment.
+                      </p>
+                      <p>
+                        Today, I'm proud to lead a team that serves over 500 satisfied customers across India, 
+                        maintaining our commitment to quality, innovation, and customer satisfaction. Our focus 
+                        remains on understanding each client's unique needs and delivering tailored solutions that 
+                        enhance their productivity and competitiveness.
+                      </p>
+                      <p>
+                        I believe in continuous learning and staying ahead of technological advancements. My goal 
+                        is to make El 21 Systems synonymous with reliability and excellence in the industrial 
+                        automation sector.
+                      </p>
+                    </div>
+
+                    {/* Key Highlights */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-muted/50 rounded-lg p-4">
+                        <div className="font-semibold text-primary mb-1">Experience</div>
+                        <div className="text-muted-foreground text-sm">20+ Years in Automation</div>
+                      </div>
+                      <div className="bg-muted/50 rounded-lg p-4">
+                        <div className="font-semibold text-primary mb-1">Education</div>
+                        <div className="text-muted-foreground text-sm">B.E. Electrical Engineering</div>
+                      </div>
+                      <div className="bg-muted/50 rounded-lg p-4">
+                        <div className="font-semibold text-primary mb-1">Specialization</div>
+                        <div className="text-muted-foreground text-sm">Temperature Control Systems</div>
+                      </div>
+                      <div className="bg-muted/50 rounded-lg p-4">
+                        <div className="font-semibold text-primary mb-1">Company Founded</div>
+                        <div className="text-muted-foreground text-sm">2009 - Surat, Gujarat</div>
                       </div>
                     </div>
                   </div>
@@ -360,47 +424,17 @@ const AboutUs = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-professional bg-gradient-to-br from-card to-accent-cyan/5 border border-accent-cyan/20">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="w-32 h-32 bg-gradient-to-br from-accent-cyan to-secondary rounded-full flex items-center justify-center text-4xl font-bold text-white">
-                    SP
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold mb-2">Suresh Patel</h3>
-                    <Badge className="mb-4 bg-gradient-to-r from-accent-cyan to-secondary text-white border-0">
-                      CTO & Co-Founder
-                    </Badge>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      Suresh leads our technical innovation and R&D initiatives. A PhD in Electrical Engineering 
-                      from NIT Surat, he has 18+ years of experience in industrial control systems and holds 
-                      15+ patents in temperature control technology.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="font-semibold text-accent-cyan">Patents</div>
-                        <div className="text-muted-foreground">15+ Filed</div>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-accent-cyan">Education</div>
-                        <div className="text-muted-foreground">PhD NIT Surat</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <Card className="card-professional bg-gradient-to-r from-accent-pink/10 to-accent-purple/10 border border-accent-pink/20 max-w-4xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-accent-pink to-accent-purple bg-clip-text text-transparent">
-                  "Our mission is to empower Indian manufacturing with precision temperature control solutions that drive productivity and innovation."
-                </h3>
-                <p className="text-muted-foreground">- Rajesh Joshi & Suresh Patel, Founders</p>
-              </CardContent>
-            </Card>
+            {/* Quote Section */}
+            <div className="text-center mt-12">
+              <Card className="card-professional bg-gradient-to-r from-accent-pink/10 to-accent-purple/10 border border-accent-pink/20">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-accent-pink to-accent-purple bg-clip-text text-transparent">
+                    "Our mission is to empower Indian manufacturing with precision temperature control solutions that drive productivity, quality, and innovation in every industry we serve."
+                  </h3>
+                  <p className="text-muted-foreground">- Sailesh Rathod, Founder & CEO</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

@@ -386,47 +386,50 @@ const Services = () => {
             </p>
           </div>
 
-          <ImageScroller 
-            images={[
-              {
-                src: heroIndustrial,
-                alt: "Installation Service",
-                title: "Professional Installation",
-                description: "Expert on-site installation by certified technicians"
-              },
-              {
-                src: aiController,
-                alt: "Technical Support",
-                title: "24/7 Technical Support",
-                description: "Round-the-clock assistance for all your needs"
-              },
-              {
-                src: blProgrammer,
-                alt: "Maintenance Service",
-                title: "Preventive Maintenance",
-                description: "Regular maintenance to ensure optimal performance"
-              },
-              {
-                src: piIndicator,
-                alt: "Quality Testing",
-                title: "Quality Assurance",
-                description: "Rigorous testing and validation processes"
-              },
-              {
-                src: heroIndustrial,
-                alt: "Training Program",
-                title: "Operator Training",
-                description: "Comprehensive training for your technical team"
-              },
-              {
-                src: aiController,
-                alt: "Custom Solutions",
-                title: "Custom Manufacturing",
-                description: "Tailored solutions for unique requirements"
-              }
-            ]}
-            height="h-72"
-          />
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/image/service.jpg"
+                alt="Professional Service" 
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Professional Service</h3>
+                  <p className="text-white/90">Expert on-site Service by certified technicians</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/image/service2.jpg" 
+                alt="Technical Support and Maintenance" 
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">24/7 Technical Support</h3>
+                  <p className="text-white/90">Round-the-clock assistance and preventive maintenance</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/image/service3.jpg" 
+                alt="Technical Support and Maintenance" 
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">24/7 Technical Support</h3>
+                  <p className="text-white/90">Round-the-clock assistance and preventive maintenance</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
       </div>

@@ -16,9 +16,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-secondary h-10 w-10 rounded-lg flex items-center justify-center">
-                <span className="text-secondary-foreground font-bold text-lg">21</span>
-              </div>
+              <img src="/assets/image/logo.png" alt="El 21 Systems" className="h-10 w-10" />
               <div>
                 <h3 className="text-xl font-bold">El 21 Systems</h3>
                 <p className="text-sm text-primary-foreground/80">Temperature Control Solutions</p>
@@ -28,13 +26,10 @@ const Footer = () => {
               Leading manufacturer of temperature controllers, process indicators, 
               and programmers for industrial applications across India.
             </p>
-            <div className="flex items-center gap-2">
-              <div className="bg-success px-2 py-1 rounded text-xs font-medium">
-                TrustSEAL Verified
-              </div>
-              <div className="flex text-yellow-400 text-xs">
-                ★★★★★ <span className="ml-1 text-primary-foreground/80">5.0 Rating</span>
-              </div>
+            <br />
+            <br />
+            <div className="text-sm text-primary-foreground/80">
+              © 2024 El 21 Systems. All rights reserved. <br /> ISO 9001:2015 Certified
             </div>
           </div>
 
@@ -129,10 +124,45 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/20">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-primary-foreground/80">
-              © 2024 El 21 Systems. All rights reserved. | ISO 9001:2015 Certified
-            </div>
             
+            {/* DAP Tech Solutions credit block */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "8px",
+                fontFamily: "Arial, sans-serif",
+                fontSize: "14px",
+                color: "white",
+              }}
+            >
+              <div style={{ marginRight: "8px" }}>
+                <img src="/assets/image/dap.png" alt="Logo" height={15} width={30} />
+              </div>
+              <div>
+                <p style={{ margin: 0 }}>
+                  Website by{" "}
+                  <span style={{ color: "#471202ff", fontWeight: "bold" }}>
+                    DAP Tech Solutions
+                  </span>
+                </p>
+                <p style={{ margin: 0 }}>
+                  Created by Deep Parmar{" "}
+                  <a
+                    href="tel:+919725362234"
+                    style={{
+                      color: "#020748ff",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    +91 9725362234
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* Extra info + back to top */}
             <div className="flex items-center gap-4">
               <div className="text-sm text-primary-foreground/80">
                 Response Rate: 94% | 500+ Happy Customers
@@ -147,6 +177,7 @@ const Footer = () => {
                 <ArrowUp className="h-4 w-4" />
               </Button>
             </div>
+
           </div>
         </div>
       </div>

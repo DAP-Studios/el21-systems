@@ -3,7 +3,6 @@ import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import ImageScroller from '@/components/ImageScroller';
 import { 
   Lightbulb, 
   Microscope, 
@@ -314,7 +313,7 @@ const RnD = () => {
       </section>
 
       {/* Partnerships */}
-      <section className="py-20 bg-muted/30">
+      {/* <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-section-title mb-6">Research Partnerships</h2>
@@ -347,7 +346,7 @@ const RnD = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Innovation Stats */}
       <section className="py-20 bg-gradient-primary text-primary-foreground">
@@ -422,47 +421,35 @@ const RnD = () => {
             </p>
           </div>
 
-          <ImageScroller 
-            images={[
-              {
-                src: heroIndustrial,
-                alt: "Research Lab",
-                title: "Advanced Research Laboratory",
-                description: "Cutting-edge equipment for temperature control research"
-              },
-              {
-                src: aiController,
-                alt: "Testing Facility",
-                title: "Environmental Testing Chambers",
-                description: "Testing temperature controllers under extreme conditions"
-              },
-              {
-                src: blProgrammer,
-                alt: "Prototyping Lab",
-                title: "Rapid Prototyping Center",
-                description: "3D printing and rapid development capabilities"
-              },
-              {
-                src: piIndicator,
-                alt: "Innovation Center",
-                title: "Innovation Development Center",
-                description: "Where breakthrough technologies are born"
-              },
-              {
-                src: heroIndustrial,
-                alt: "Quality Lab",
-                title: "Quality Assurance Lab",
-                description: "Rigorous testing and validation processes"
-              },
-              {
-                src: aiController,
-                alt: "Clean Room",
-                title: "Clean Room Manufacturing",
-                description: "Precision manufacturing in controlled environment"
-              }
-            ]}
-            height="h-72"
-          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/image/rd-lab.jpg"
+                alt="Advanced Research Laboratory" 
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Advanced Research Laboratory</h3>
+                  <p className="text-white/90">Cutting-edge equipment for temperature control research and development</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/image/rd-lab2.jpg"
+                alt="Innovation Development Center" 
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Innovation Development Center</h3>
+                  <p className="text-white/90">Where breakthrough technologies and next-generation solutions are born</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       </div>
