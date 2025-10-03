@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, CheckCircle, Award, Users, Clock, Play, Star, Zap, Shield, Truck } from 'lucide-react';
+import { ArrowRight, CheckCircle, Award, Users, Clock, Play, Star, Zap, Shield, Truck, MapPin, Phone, Mail } from 'lucide-react';
 import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSection = () => {
@@ -53,18 +53,55 @@ const HeroSection = () => {
 
             {/* CTA Section */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group h-14 px-8">
+              <Button 
+                size="lg" 
+                className="group h-14 px-8"
+                onClick={() => {
+                  const productsSection = document.getElementById('products');
+                  if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Explore Products
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 group bg-white/10 border-white/30 text-white hover:bg-white/20">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="h-14 px-8 group bg-white/10 border-white/30 text-white hover:bg-white/20"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Get Quote
               </Button>
             </div>
 
+            {/* Location & Contact Info */}
+            <div className="pt-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/90">
+                <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 backdrop-blur-sm">
+                  <MapPin className="h-4 w-4 text-accent-cyan" />
+                  <span className="font-medium">Surat, Gujarat, India</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 backdrop-blur-sm">
+                  <Phone className="h-4 w-4 text-accent-purple" />
+                  <span className="font-medium">+91 98765 43210</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 backdrop-blur-sm">
+                  <Mail className="h-4 w-4 text-accent-pink" />
+                  <span className="font-medium">info@el21systems.com</span>
+                </div>
+              </div>
+            </div>
+
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+            {/* <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-white">15+</div>
                 <div className="text-sm text-white/80">Years Experience</div>
@@ -77,7 +114,7 @@ const HeroSection = () => {
                 <div className="text-4xl font-bold text-white">24/7</div>
                 <div className="text-sm text-white/80">Support</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
