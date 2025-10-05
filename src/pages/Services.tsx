@@ -78,37 +78,79 @@ const Services = () => {
   };
 
   // Handle project form submission
-  const handleProjectSubmit = (e: React.FormEvent) => {
+  const handleProjectSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${projectForm.name}! We've received your project details and will contact you at ${projectForm.email} shortly.`);
-    setIsProjectDialogOpen(false);
-    // Reset form
-    setProjectForm({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      projectBrief: '',
-      budget: '',
-      timeline: ''
-    });
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mdkwddrk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...projectForm,
+          formType: 'Project Discussion'
+        }),
+      });
+
+      if (response.ok) {
+        alert(`Thank you ${projectForm.name}! We've received your project details and will contact you at ${projectForm.email} shortly.`);
+        setIsProjectDialogOpen(false);
+        // Reset form
+        setProjectForm({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          projectBrief: '',
+          budget: '',
+          timeline: ''
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    }
   };
 
   // Handle quote form submission
-  const handleQuoteSubmit = (e: React.FormEvent) => {
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${quoteForm.name}! We've received your service request and will send you a quote at ${quoteForm.email} shortly.`);
-    setIsQuoteDialogOpen(false);
-    // Reset form
-    setQuoteForm({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      serviceType: '',
-      requirements: '',
-      preferredDate: ''
-    });
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xdkwdlon', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...quoteForm,
+          formType: 'Service Quote Request'
+        }),
+      });
+
+      if (response.ok) {
+        alert(`Thank you ${quoteForm.name}! We've received your service request and will send you a quote at ${quoteForm.email} shortly.`);
+        setIsQuoteDialogOpen(false);
+        // Reset form
+        setQuoteForm({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          serviceType: '',
+          requirements: '',
+          preferredDate: ''
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    }
   };
 
   const mainServices = [

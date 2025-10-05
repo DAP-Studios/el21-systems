@@ -70,37 +70,79 @@ const RnD = () => {
   };
 
   // Handle research partnership form submission
-  const handleResearchSubmit = (e: React.FormEvent) => {
+  const handleResearchSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${researchForm.name}! We've received your research partnership inquiry and our R&D team will contact you at ${researchForm.email} shortly.`);
-    setIsResearchDialogOpen(false);
-    // Reset form
-    setResearchForm({
-      name: '',
-      organization: '',
-      email: '',
-      phone: '',
-      researchArea: '',
-      projectBrief: '',
-      duration: ''
-    });
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mldplweg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...researchForm,
+          formType: 'Research Partnership'
+        }),
+      });
+
+      if (response.ok) {
+        alert(`Thank you ${researchForm.name}! We've received your research partnership inquiry and our R&D team will contact you at ${researchForm.email} shortly.`);
+        setIsResearchDialogOpen(false);
+        // Reset form
+        setResearchForm({
+          name: '',
+          organization: '',
+          email: '',
+          phone: '',
+          researchArea: '',
+          projectBrief: '',
+          duration: ''
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    }
   };
 
   // Handle custom development form submission
-  const handleCustomDevSubmit = (e: React.FormEvent) => {
+  const handleCustomDevSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${customDevForm.name}! We've received your custom development request and will send you a detailed quote at ${customDevForm.email} shortly.`);
-    setIsCustomDevDialogOpen(false);
-    // Reset form
-    setCustomDevForm({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      requirements: '',
-      specifications: '',
-      timeline: ''
-    });
+    
+    try {
+      const response = await fetch('https://formspree.io/f/myznpdye', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...customDevForm,
+          formType: 'Custom Development Request'
+        }),
+      });
+
+      if (response.ok) {
+        alert(`Thank you ${customDevForm.name}! We've received your custom development request and will send you a detailed quote at ${customDevForm.email} shortly.`);
+        setIsCustomDevDialogOpen(false);
+        // Reset form
+        setCustomDevForm({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          requirements: '',
+          specifications: '',
+          timeline: ''
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    }
   };
 
   // Handle research partnership request (for other buttons)

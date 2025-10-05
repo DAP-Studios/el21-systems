@@ -33,22 +33,37 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    // Form data can be sent to backend API or email service
-    alert('Thank you for your inquiry! We will contact you shortly.');
     
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      product: '',
-      quantity: '',
-      message: ''
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/xvgwqbpd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your inquiry! We will contact you shortly.');
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          product: '',
+          quantity: '',
+          message: ''
+        });
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    }
   };
 
   const contactInfo = [
