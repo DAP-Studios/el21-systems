@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { 
   Wrench, 
   Headphones, 
@@ -16,7 +27,8 @@ import {
   ArrowRight,
   Factory,
   Zap,
-  Award
+  Award,
+  X
 } from 'lucide-react';
 
 import ImageScroller from '@/components/ImageScroller';
@@ -28,6 +40,77 @@ import piIndicator from '@/assets/pi-772-indicator.jpg';
 import heroIndustrial from '@/assets/hero-industrial.jpg';
 
 const Services = () => {
+  // State for dialogs
+  const [isProjectDialogOpen, setIsProjectDialogOpen] = useState(false);
+  const [isQuoteDialogOpen, setIsQuoteDialogOpen] = useState(false);
+
+  // State for project form
+  const [projectForm, setProjectForm] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    projectBrief: '',
+    budget: '',
+    timeline: ''
+  });
+
+  // State for quote form
+  const [quoteForm, setQuoteForm] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    serviceType: '',
+    requirements: '',
+    preferredDate: ''
+  });
+
+  // Scroll to contact section function
+  const scrollToContact = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+
+  // Handle service request
+  const handleServiceRequest = (serviceType: string) => {
+    alert(`Thank you for your interest in ${serviceType}! Our team will contact you shortly.`);
+    scrollToContact();
+  };
+
+  // Handle project form submission
+  const handleProjectSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Thank you ${projectForm.name}! We've received your project details and will contact you at ${projectForm.email} shortly.`);
+    setIsProjectDialogOpen(false);
+    // Reset form
+    setProjectForm({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      projectBrief: '',
+      budget: '',
+      timeline: ''
+    });
+  };
+
+  // Handle quote form submission
+  const handleQuoteSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Thank you ${quoteForm.name}! We've received your service request and will send you a quote at ${quoteForm.email} shortly.`);
+    setIsQuoteDialogOpen(false);
+    // Reset form
+    setQuoteForm({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      serviceType: '',
+      requirements: '',
+      preferredDate: ''
+    });
+  };
+
   const mainServices = [
     {
       icon: Factory,
@@ -207,10 +290,13 @@ const Services = () => {
                     ))}
                   </div>
                   
-                  <Button className="btn-primary w-full group">
+                  {/* <Button 
+                    className="btn-primary w-full group"
+                    onClick={() => handleServiceRequest(service.title)}
+                  >
                     {service.ctaText}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -252,7 +338,7 @@ const Services = () => {
       </section>
 
       {/* Service Packages */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-section-title mb-6">Service Packages</h2>
@@ -287,6 +373,7 @@ const Services = () => {
                   
                   <Button 
                     className={pkg.popular ? "btn-primary w-full" : "btn-outline-primary w-full"}
+                    onClick={() => handleServiceRequest(pkg.name)}
                   >
                     {pkg.name === 'Enterprise Solution' ? 'Contact Sales' : 'Get Started'}
                   </Button>
@@ -295,7 +382,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact CTA */}
       <section className="py-20 bg-gradient-primary text-primary-foreground">
@@ -309,14 +396,134 @@ const Services = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="group">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="group"
+                onClick={() => window.location.href = 'tel:+919876543210'}
+              >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Service Team
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Request Service Quote
-              </Button>
+              
+              <Dialog open={isQuoteDialogOpen} onOpenChange={setIsQuoteDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  >
+                    Request Service Quote
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold">Request Service Quote</DialogTitle>
+                    <DialogDescription>
+                      Fill in the details below and our team will provide you with a customized service quote within 24 hours.
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <form onSubmit={handleQuoteSubmit} className="space-y-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="quote-name">Full Name *</Label>
+                        <Input
+                          id="quote-name"
+                          placeholder="John Doe"
+                          value={quoteForm.name}
+                          onChange={(e) => setQuoteForm({...quoteForm, name: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="quote-company">Company Name *</Label>
+                        <Input
+                          id="quote-company"
+                          placeholder="ABC Industries"
+                          value={quoteForm.company}
+                          onChange={(e) => setQuoteForm({...quoteForm, company: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="quote-email">Email Address *</Label>
+                        <Input
+                          id="quote-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          value={quoteForm.email}
+                          onChange={(e) => setQuoteForm({...quoteForm, email: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="quote-phone">Phone Number *</Label>
+                        <Input
+                          id="quote-phone"
+                          type="tel"
+                          placeholder="+91 98765 43210"
+                          value={quoteForm.phone}
+                          onChange={(e) => setQuoteForm({...quoteForm, phone: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="quote-service">Service Type *</Label>
+                      <Input
+                        id="quote-service"
+                        placeholder="e.g., Installation, Maintenance, Custom Manufacturing"
+                        value={quoteForm.serviceType}
+                        onChange={(e) => setQuoteForm({...quoteForm, serviceType: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="quote-requirements">Service Requirements *</Label>
+                      <Textarea
+                        id="quote-requirements"
+                        placeholder="Please describe your service requirements, quantity, specifications, etc."
+                        rows={4}
+                        value={quoteForm.requirements}
+                        onChange={(e) => setQuoteForm({...quoteForm, requirements: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="quote-date">Preferred Service Date</Label>
+                      <Input
+                        id="quote-date"
+                        type="date"
+                        value={quoteForm.preferredDate}
+                        onChange={(e) => setQuoteForm({...quoteForm, preferredDate: e.target.value})}
+                      />
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <Button type="submit" className="flex-1 btn-primary">
+                        Submit Request
+                      </Button>
+                      <Button 
+                        type="button" 
+                        variant="outline" 
+                        onClick={() => setIsQuoteDialogOpen(false)}
+                      >
+                        Cancel
+                      </Button>
+                    </div>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
             
             <div className="mt-8 text-center">
@@ -367,9 +574,121 @@ const Services = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Our engineering team specializes in creating tailored temperature control solutions for unique industrial requirements.
             </p>
-            <Button className="btn-primary">
-              Discuss Your Project
-            </Button>
+            
+            <Dialog open={isProjectDialogOpen} onOpenChange={setIsProjectDialogOpen}>
+              <DialogTrigger asChild>
+                <Button className="btn-primary">
+                  Discuss Your Project
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold">Discuss Your Project</DialogTitle>
+                  <DialogDescription>
+                    Share your project details with us and our engineering team will get back to you with tailored solutions.
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <form onSubmit={handleProjectSubmit} className="space-y-4 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="project-name">Full Name *</Label>
+                      <Input
+                        id="project-name"
+                        placeholder="John Doe"
+                        value={projectForm.name}
+                        onChange={(e) => setProjectForm({...projectForm, name: e.target.value})}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="project-company">Company Name *</Label>
+                      <Input
+                        id="project-company"
+                        placeholder="ABC Industries"
+                        value={projectForm.company}
+                        onChange={(e) => setProjectForm({...projectForm, company: e.target.value})}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="project-email">Email Address *</Label>
+                      <Input
+                        id="project-email"
+                        type="email"
+                        placeholder="john@company.com"
+                        value={projectForm.email}
+                        onChange={(e) => setProjectForm({...projectForm, email: e.target.value})}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="project-phone">Phone Number *</Label>
+                      <Input
+                        id="project-phone"
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        value={projectForm.phone}
+                        onChange={(e) => setProjectForm({...projectForm, phone: e.target.value})}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="project-brief">Project Brief *</Label>
+                    <Textarea
+                      id="project-brief"
+                      placeholder="Describe your project: What temperature control solution do you need? What are your specific requirements? What industry/application is this for?"
+                      rows={5}
+                      value={projectForm.projectBrief}
+                      onChange={(e) => setProjectForm({...projectForm, projectBrief: e.target.value})}
+                      required
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="project-budget">Estimated Budget (Optional)</Label>
+                      <Input
+                        id="project-budget"
+                        placeholder="e.g., ₹50,000 - ₹1,00,000"
+                        value={projectForm.budget}
+                        onChange={(e) => setProjectForm({...projectForm, budget: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="project-timeline">Project Timeline (Optional)</Label>
+                      <Input
+                        id="project-timeline"
+                        placeholder="e.g., 2-3 months"
+                        value={projectForm.timeline}
+                        onChange={(e) => setProjectForm({...projectForm, timeline: e.target.value})}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 pt-4">
+                    <Button type="submit" className="flex-1 btn-primary">
+                      Submit Project Details
+                    </Button>
+                    <Button 
+                      type="button" 
+                      variant="outline" 
+                      onClick={() => setIsProjectDialogOpen(false)}
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>

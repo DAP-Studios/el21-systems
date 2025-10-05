@@ -26,10 +26,10 @@ const Footer = () => {
               Leading manufacturer of temperature controllers, process indicators, 
               and programmers for industrial applications across India.
             </p>
-            <br />
-            <br />
-            <div className="text-sm text-primary-foreground/80">
-              © 2024 El 21 Systems. All rights reserved. <br /> ISO 9001:2015 Certified
+            <div className="mt-6 text-sm text-primary-foreground/80">
+              <p>© 2025 El 21 Systems.</p>
+              <p>All rights reserved.</p>
+              <p className="mt-2 font-semibold">ISO 9001:2015 Certified</p>
             </div>
           </div>
 

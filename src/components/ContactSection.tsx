@@ -36,7 +36,19 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    // Form data can be sent to backend API or email service
+    alert('Thank you for your inquiry! We will contact you shortly.');
+    
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      product: '',
+      quantity: '',
+      message: ''
+    });
   };
 
   const contactInfo = [

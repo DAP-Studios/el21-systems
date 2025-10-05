@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { 
   Lightbulb, 
   Microscope, 
@@ -27,6 +38,77 @@ import piIndicator from '@/assets/pi-772-indicator.jpg';
 import heroIndustrial from '@/assets/hero-industrial.jpg';
 
 const RnD = () => {
+  // State for dialogs
+  const [isResearchDialogOpen, setIsResearchDialogOpen] = useState(false);
+  const [isCustomDevDialogOpen, setIsCustomDevDialogOpen] = useState(false);
+
+  // State for research partnership form
+  const [researchForm, setResearchForm] = useState({
+    name: '',
+    organization: '',
+    email: '',
+    phone: '',
+    researchArea: '',
+    projectBrief: '',
+    duration: ''
+  });
+
+  // State for custom development form
+  const [customDevForm, setCustomDevForm] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    requirements: '',
+    specifications: '',
+    timeline: ''
+  });
+
+  // Scroll to contact section function
+  const scrollToContact = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+
+  // Handle research partnership form submission
+  const handleResearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Thank you ${researchForm.name}! We've received your research partnership inquiry and our R&D team will contact you at ${researchForm.email} shortly.`);
+    setIsResearchDialogOpen(false);
+    // Reset form
+    setResearchForm({
+      name: '',
+      organization: '',
+      email: '',
+      phone: '',
+      researchArea: '',
+      projectBrief: '',
+      duration: ''
+    });
+  };
+
+  // Handle custom development form submission
+  const handleCustomDevSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Thank you ${customDevForm.name}! We've received your custom development request and will send you a detailed quote at ${customDevForm.email} shortly.`);
+    setIsCustomDevDialogOpen(false);
+    // Reset form
+    setCustomDevForm({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      requirements: '',
+      specifications: '',
+      timeline: ''
+    });
+  };
+
+  // Handle research partnership request (for other buttons)
+  const handleResearchRequest = (type: string) => {
+    alert(`Thank you for your interest in ${type}! Our R&D team will contact you shortly.`);
+    scrollToContact();
+  };
+
   const researchAreas = [
     {
       icon: Cpu,
@@ -391,13 +473,234 @@ const RnD = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-primary group">
-                Discuss Research Partnership
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="btn-outline-primary">
-                Request Custom Development
-              </Button>
+              <Dialog open={isResearchDialogOpen} onOpenChange={setIsResearchDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    className="btn-primary group"
+                  >
+                    Discuss Research Partnership
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold">Research Partnership Inquiry</DialogTitle>
+                    <DialogDescription>
+                      Share your research interests and our R&D team will connect with you to explore collaboration opportunities.
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <form onSubmit={handleResearchSubmit} className="space-y-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="research-name">Full Name *</Label>
+                        <Input
+                          id="research-name"
+                          placeholder="Your name"
+                          value={researchForm.name}
+                          onChange={(e) => setResearchForm({...researchForm, name: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="research-organization">Organization *</Label>
+                        <Input
+                          id="research-organization"
+                          placeholder="University/Institute/Company"
+                          value={researchForm.organization}
+                          onChange={(e) => setResearchForm({...researchForm, organization: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="research-email">Email Address *</Label>
+                        <Input
+                          id="research-email"
+                          type="email"
+                          placeholder="your.email@example.com"
+                          value={researchForm.email}
+                          onChange={(e) => setResearchForm({...researchForm, email: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="research-phone">Phone Number *</Label>
+                        <Input
+                          id="research-phone"
+                          type="tel"
+                          placeholder="+91 98765 43210"
+                          value={researchForm.phone}
+                          onChange={(e) => setResearchForm({...researchForm, phone: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="research-area">Research Area *</Label>
+                      <Input
+                        id="research-area"
+                        placeholder="e.g., IoT Integration, Control Algorithms, Energy Efficiency"
+                        value={researchForm.researchArea}
+                        onChange={(e) => setResearchForm({...researchForm, researchArea: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="research-brief">Project Brief *</Label>
+                      <Textarea
+                        id="research-brief"
+                        placeholder="Describe your research project, objectives, and how you envision collaborating with El 21 Systems..."
+                        rows={5}
+                        value={researchForm.projectBrief}
+                        onChange={(e) => setResearchForm({...researchForm, projectBrief: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="research-duration">Expected Duration</Label>
+                      <Input
+                        id="research-duration"
+                        placeholder="e.g., 6 months, 1 year, 2-3 years"
+                        value={researchForm.duration}
+                        onChange={(e) => setResearchForm({...researchForm, duration: e.target.value})}
+                      />
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <Button type="button" variant="outline" onClick={() => setIsResearchDialogOpen(false)} className="flex-1">
+                        Cancel
+                      </Button>
+                      <Button type="submit" className="btn-primary flex-1">
+                        Submit Research Inquiry
+                      </Button>
+                    </div>
+                  </form>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog open={isCustomDevDialogOpen} onOpenChange={setIsCustomDevDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="btn-outline-primary"
+                  >
+                    Request Custom Development
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold">Custom Development Request</DialogTitle>
+                    <DialogDescription>
+                      Describe your custom temperature control requirements and our engineering team will provide you with a detailed quote.
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <form onSubmit={handleCustomDevSubmit} className="space-y-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="customdev-name">Full Name *</Label>
+                        <Input
+                          id="customdev-name"
+                          placeholder="Your name"
+                          value={customDevForm.name}
+                          onChange={(e) => setCustomDevForm({...customDevForm, name: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="customdev-company">Company Name *</Label>
+                        <Input
+                          id="customdev-company"
+                          placeholder="Your company"
+                          value={customDevForm.company}
+                          onChange={(e) => setCustomDevForm({...customDevForm, company: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="customdev-email">Email Address *</Label>
+                        <Input
+                          id="customdev-email"
+                          type="email"
+                          placeholder="your.email@company.com"
+                          value={customDevForm.email}
+                          onChange={(e) => setCustomDevForm({...customDevForm, email: e.target.value})}
+                          required
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="customdev-phone">Phone Number *</Label>
+                        <Input
+                          id="customdev-phone"
+                          type="tel"
+                          placeholder="+91 98765 43210"
+                          value={customDevForm.phone}
+                          onChange={(e) => setCustomDevForm({...customDevForm, phone: e.target.value})}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="customdev-requirements">Development Requirements *</Label>
+                      <Textarea
+                        id="customdev-requirements"
+                        placeholder="What custom temperature control solution do you need? Include application details, industry requirements, etc."
+                        rows={5}
+                        value={customDevForm.requirements}
+                        onChange={(e) => setCustomDevForm({...customDevForm, requirements: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="customdev-specs">Technical Specifications</Label>
+                      <Textarea
+                        id="customdev-specs"
+                        placeholder="Temperature range, accuracy requirements, control features, communication protocols, etc."
+                        rows={4}
+                        value={customDevForm.specifications}
+                        onChange={(e) => setCustomDevForm({...customDevForm, specifications: e.target.value})}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="customdev-timeline">Expected Timeline *</Label>
+                      <Input
+                        id="customdev-timeline"
+                        placeholder="e.g., 3 months, 6 months, urgent"
+                        value={customDevForm.timeline}
+                        onChange={(e) => setCustomDevForm({...customDevForm, timeline: e.target.value})}
+                        required
+                      />
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <Button type="button" variant="outline" onClick={() => setIsCustomDevDialogOpen(false)} className="flex-1">
+                        Cancel
+                      </Button>
+                      <Button type="submit" className="btn-primary flex-1">
+                        Submit Development Request
+                      </Button>
+                    </div>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
             
             <div className="mt-8 text-center">

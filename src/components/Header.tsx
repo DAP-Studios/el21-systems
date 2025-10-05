@@ -53,6 +53,15 @@ const Header = () => {
 
   return (
     <>
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Main Header */}
       <header className={`bg-white/95 border-b border-border/50 sticky top-0 z-50 backdrop-blur-lg transition-all duration-300 flex items-center justify-center ${
         isScrolled ? 'shadow-xl h-14' : 'shadow-lg h-16'
@@ -142,7 +151,7 @@ const Header = () => {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden md:flex items-center space-x-4">
+            {/* <div className="hidden md:flex items-center space-x-4">
               <Button 
                 className="bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                 onClick={() => {
@@ -154,7 +163,7 @@ const Header = () => {
               >
                 Get Quote
               </Button>
-            </div>
+            </div> */}
 
             {/* Mobile Menu Button */}
             <button
@@ -167,73 +176,105 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-border">
-              <nav className="flex flex-col space-y-4">
-                <Link
-                  to="/"
-                  className={`font-medium transition-colors py-2 ${
-                    isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                  ref={firstMobileLinkRef}
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/shop"
-                  className={`font-medium transition-colors py-2 ${
-                    isActive('/shop') ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Shop
-                </Link>
-                <Link
-                  to="/about"
-                  className={`font-medium transition-colors py-2 ${
-                    isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  to="/services"
-                  className={`font-medium transition-colors py-2 ${
-                    isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/research"
-                  className={`font-medium transition-colors py-2 ${
-                    isActive('/research') ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  R&D
-                </Link>
-                <Button 
-                  className="bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 mt-4"
-                  onClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Get Quote
-                </Button>
-              </nav>
-            </div>
-          )}
         </div>
       </header>
+
+      {/* Mobile Navigation Sidebar */}
+      <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <div className="flex flex-col h-full">
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-border">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Menu
+            </h2>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Content */}
+          <nav className="flex-1 flex flex-col p-6 space-y-2 overflow-y-auto">
+            <Link
+              to="/"
+              className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+                isActive('/') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+              ref={firstMobileLinkRef}
+            >
+              Home
+            </Link>
+            <Link
+              to="/shop"
+              className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+                isActive('/shop') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Shop
+            </Link>
+            <Link
+              to="/about"
+              className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+                isActive('/about') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/services"
+              className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+                isActive('/services') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              to="/research"
+              className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
+                isActive('/research') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              R&D
+            </Link>
+
+            {/* Mobile CTA Button */}
+            <div className="pt-6 mt-auto">
+              <Button 
+                className="w-full bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsMenuOpen(false);
+                }}
+              >
+                Get Quote
+              </Button>
+            </div>
+          </nav>
+        </div>
+      </div>
     </>
   );
 };
