@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoBImg from '/assets/image/logob.png';
 import logoOImg from '/assets/image/logoo.png';
+
+const socialLinks = [
+  { icon: Facebook, href: 'https://facebook.com/el21systems', label: 'Facebook', color: '#0077ff' },
+  { icon: Instagram, href: 'https://instagram.com/el21systems', label: 'Instagram', color: '#ff385c' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/el21systems', label: 'LinkedIn', color: '#0077ff' },
+  { icon: Youtube, href: 'https://youtube.com/@el21systems', label: 'YouTube', color: '#ff0000' },
+];
 
 /**
  * Header component displays the main navigation bar and logo for El 21 Systems.
@@ -150,10 +157,27 @@ const Header = () => {
               </Link>
             </nav>
 
-            {/* CTA Button */}
-            {/* <div className="hidden md:flex items-center space-x-4">
-              <Button 
-                className="bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+            {/* Social Links & CTA */}
+            <div className="hidden md:flex items-center space-x-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-muted transition-all duration-300 hover:scale-110 group"
+                  aria-label={social.label}
+                >
+                  <social.icon
+                    className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"
+                    style={{ color: 'inherit' }}
+                  />
+                </a>
+              ))}
+              <div className="w-px h-6 bg-border mx-2"></div>
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 neon-glow-blue"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
@@ -163,7 +187,7 @@ const Header = () => {
               >
                 Get Quote
               </Button>
-            </div> */}
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -257,10 +281,24 @@ const Header = () => {
               R&D
             </Link>
 
-            {/* Mobile CTA Button */}
-            <div className="pt-6 mt-auto">
-              <Button 
-                className="w-full bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+            {/* Mobile Social Links */}
+            <div className="pt-6 mt-auto space-y-4">
+              <div className="flex justify-center gap-4 pb-4 border-b border-border">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl glass-card-2026 hover:scale-110 transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-6 w-6" style={{ color: social.color }} />
+                  </a>
+                ))}
+              </div>
+              <Button
+                className="w-full bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg neon-glow-blue"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {

@@ -5,8 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, Filter, ArrowRight } from 'lucide-react';
+import { Search, Filter, ArrowRight, Eye, MessageCircle } from 'lucide-react';
 import ProductCarousel from '@/components/ProductCarousel';
+import { motion } from 'framer-motion';
 
 // ✅ Updated image imports after renaming
 import tempControllerImg from '@/assets/products/temperature-controller.jpg';
@@ -150,47 +151,57 @@ const Shop = () => {
     }
   };
 
+  const handleWhatsAppEnquiry = (productName: string) => {
+    window.open(`https://wa.me/919876543210?text=Hi, I want to enquire about ${productName}`, '_blank');
+  };
+
   return (
-    <Layout>
+    <Layout showContactSection={false}>
       <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-secondary/20 via-accent/10 to-primary/20">
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        
+      {/* Hero Section - 2026 Style */}
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#021526] via-[#0077ff]/20 to-[#021526] overflow-hidden">
+        <div className="circuit-overlay absolute inset-0 opacity-20" />
+        <div className="particle-background absolute inset-0" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
-              Professional Shop
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
-              Industrial Equipment Store
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-block mb-6 glass-card-2026 px-6 py-3 rounded-full">
+              <span className="text-[#f7d000] font-bold text-lg">Professional Shop</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black mb-6 text-white">
+              Industrial <span className="holographic">Equipment</span> Store
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-medium">
+            <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Browse our comprehensive catalog of precision instruments, controllers, and measurement devices.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Filters and Search */}
-      <section className="py-8 bg-gradient-accent border-b border-border/50">
+      {/* Filters and Search - 2026 Style */}
+      <section className="py-8 bg-[#041e3a] border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="flex flex-col sm:flex-row gap-4 flex-1">
               {/* Search */}
               <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0077ff] h-4 w-4" />
                 <Input
                   placeholder="Search products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 glass-card-2026 border-white/20 text-white placeholder:text-white/50"
                 />
               </div>
               {/* Category Filter */}
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="w-48">
-                  <Filter className="h-4 w-4 mr-2" />
+                <SelectTrigger className="w-48 glass-card-2026 border-white/20 text-white">
+                  <Filter className="h-4 w-4 mr-2 text-[#ff385c]" />
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
                 <SelectContent>
@@ -205,7 +216,7 @@ const Shop = () => {
 
             {/* Sort Dropdown */}
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-48">
+              <SelectTrigger className="w-48 glass-card-2026 border-white/20 text-white">
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
@@ -217,62 +228,91 @@ const Shop = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-20 bg-gradient-surface">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {filteredProducts.map((product) => (
-              <Card
+      {/* Products Grid - 2026 Style */}
+      <section className="py-20 bg-gradient-to-b from-[#041e3a] to-[#021526] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0077ff_1px,transparent_1px),linear-gradient(to_bottom,#ff385c_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProducts.map((product, index) => (
+              <motion.div
                 key={product.id}
-                className="card-professional group cursor-pointer overflow-hidden glow-primary hover:glow-secondary"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <CardHeader className="p-0 relative overflow-hidden">
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <ProductCarousel images={product.image} productName={product.name} />
-                    <div className="absolute top-4 left-4 z-10">
-                      <Badge className="bg-gradient-primary text-primary-foreground border-0 font-bold">
-                        {product.category}
-                      </Badge>
+                <Card className="glass-card-2026 group cursor-pointer overflow-hidden hover-3d border-white/10 h-full">
+                  <CardHeader className="p-0 relative overflow-hidden">
+                    <div className="relative overflow-hidden rounded-t-2xl">
+                      <ProductCarousel images={product.image} productName={product.name} />
+                      <div className="absolute top-4 left-4 z-10">
+                        <Badge className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0 font-bold">
+                          {product.category}
+                        </Badge>
+                      </div>
+                      {/* NEW Ribbon */}
+                      {index < 3 && (
+                        <div className="absolute top-0 right-0">
+                          <div className="bg-[#ff385c] text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-8 translate-y-4">
+                            NEW
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </CardHeader>
+                  </CardHeader>
 
-                <CardContent className="p-8">
-                  <CardTitle className="mb-4 text-xl leading-tight group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent-purple group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                    {product.name}
-                  </CardTitle>
+                  <CardContent className="p-6">
+                    <CardTitle className="mb-4 text-xl leading-tight text-white group-hover:holographic transition-all duration-300">
+                      {product.name}
+                    </CardTitle>
 
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                    {product.description}
-                  </p>
+                    <p className="text-white/60 text-sm mb-4 line-clamp-2">
+                      {product.description}
+                    </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {product.features.slice(0, 4).map((feature, index) => (
-                      <Badge key={index} variant="outline" className="text-xs font-medium">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {product.features.slice(0, 3).map((feature, idx) => (
+                        <Badge key={idx} className="glass-dark text-white/80 border-white/20 text-xs">
+                          ✓ {feature}
+                        </Badge>
+                      ))}
+                    </div>
 
-                  <Button
-                    className="w-full btn-primary group glow-primary mt-6"
-                    onClick={handleGetQuote}
-                  >
-                    <span className="relative z-10">Get Quote</span>
-                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-all duration-300" />
-                  </Button>
-                </CardContent>
-              </Card>
+                    {/* Action Buttons */}
+                    <div className="flex gap-2">
+                      <Button
+                        className="flex-1 bg-gradient-to-r from-[#0077ff] to-[#0055cc] hover:from-[#0055cc] hover:to-[#0077ff] text-white border-0 rounded-xl font-bold hover:scale-105 transition-all duration-300"
+                        onClick={handleGetQuote}
+                      >
+                        <Eye className="mr-2 h-4 w-4" />
+                        View Specs
+                      </Button>
+                      <Button
+                        className="flex-1 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] text-white border-0 rounded-xl font-bold hover:scale-105 transition-all duration-300"
+                        onClick={() => handleWhatsAppEnquiry(product.name)}
+                      >
+                        <MessageCircle className="mr-2 h-4 w-4" />
+                        Enquiry
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
-              <h3 className="text-2xl font-semibold mb-4">No products found</h3>
-              <p className="text-muted-foreground mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-white">No products found</h3>
+              <p className="text-white/60 mb-6">
                 Try adjusting your search criteria or filters
               </p>
-              <Button onClick={() => { setSearchTerm(''); setCategoryFilter('all'); }}>
+              <Button
+                onClick={() => { setSearchTerm(''); setCategoryFilter('all'); }}
+                className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white"
+              >
                 Clear Filters
               </Button>
             </div>

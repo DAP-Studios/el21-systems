@@ -63,16 +63,16 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4">Customer Success Stories</Badge>
-          <h2 className="text-section-title mb-6">
-            Trusted by Industry Leaders Across India
+          <Badge className="mb-4 bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0">Customer Success Stories</Badge>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+            What Our <span className="holographic">Customers Say</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            From small-scale operations to large industrial plants, our temperature control 
+          <p className="text-lg text-white/70 leading-relaxed">
+            From small-scale operations to large industrial plants, our temperature control
             solutions have helped businesses achieve operational excellence and growth.
           </p>
         </div>
@@ -81,8 +81,8 @@ const TestimonialsSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-              <div className="text-muted-foreground font-medium">{stat.label}</div>
+              <div className="text-4xl font-bold text-[#f7d000] mb-2">{stat.value}</div>
+              <div className="text-white/80 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -90,32 +90,32 @@ const TestimonialsSection = () => {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="card-professional group">
+            <Card key={index} className="glass-card-2026 hover-3d border-white/10 group">
               <CardContent className="p-6">
                 {/* Quote Icon */}
                 <div className="flex justify-between items-start mb-4">
-                  <Quote className="h-8 w-8 text-primary/20" />
+                  <Quote className="h-8 w-8 text-[#0077ff]/40" />
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 fill-[#f7d000] text-[#f7d000]" />
                     ))}
                   </div>
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-white/80 mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
 
                 {/* Customer Info */}
-                <div className="border-t border-border pt-4">
+                <div className="border-t border-white/20 pt-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-primary">{testimonial.name}</h4>
-                      <p className="text-sm font-medium">{testimonial.company}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                      <h4 className="font-bold text-white">{testimonial.name}</h4>
+                      <p className="text-sm font-medium text-white/80">{testimonial.company}</p>
+                      <p className="text-xs text-white/60">{testimonial.location}</p>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge className="text-xs bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0">
                       {testimonial.industry}
                     </Badge>
                   </div>
@@ -126,19 +126,19 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center bg-muted/50 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="mt-16 text-center glass-card-2026 rounded-2xl p-8 border-white/20">
+          <h3 className="text-2xl font-bold mb-4 text-white">
             Join 500+ Satisfied Customers
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Experience the difference that quality temperature control solutions can make 
+          <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+            Experience the difference that quality temperature control solutions can make
             to your operations. Get started with a free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary px-8 py-3 rounded-lg font-semibold">
+            <button className="bg-gradient-to-r from-[#0077ff] to-[#0055cc] hover:from-[#0055cc] hover:to-[#0077ff] text-white px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300">
               Schedule Free Consultation
             </button>
-            <button className="btn-outline-primary px-8 py-3 rounded-lg font-semibold">
+            <button className="border-2 border-[#0077ff] text-[#0077ff] hover:bg-[#0077ff] hover:text-white px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300">
               View Case Studies
             </button>
           </div>

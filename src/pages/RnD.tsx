@@ -298,7 +298,7 @@ const RnD = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               Innovating Tomorrow's Temperature Control
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-medium">
+            <p className="text-xl text-white/70 mb-8 leading-relaxed font-medium">
               Our dedicated R&D center drives innovation in industrial temperature control, 
               developing cutting-edge technologies that shape the future of manufacturing automation.
             </p>
@@ -307,11 +307,11 @@ const RnD = () => {
       </section>
 
       {/* Research Areas */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Current Research Focus</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Current Research Focus</h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
               We're pushing the boundaries of temperature control technology across multiple 
               research streams to deliver next-generation solutions.
             </p>
@@ -319,7 +319,7 @@ const RnD = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {researchAreas.map((area, index) => (
-              <Card key={index} className="card-professional group">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10 group">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -332,7 +332,7 @@ const RnD = () => {
                       </Badge>
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {area.description}
                   </p>
                 </CardHeader>
@@ -358,11 +358,11 @@ const RnD = () => {
       </section>
 
       {/* Innovation Timeline */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-gradient-to-b from-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Innovation Timeline</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Innovation Timeline</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
               Our recent breakthrough innovations that are transforming industrial temperature control.
             </p>
           </div>
@@ -382,7 +382,7 @@ const RnD = () => {
                   <Card className="flex-1 card-professional">
                     <CardContent className="p-6">
                       <h3 className="text-xl font-bold mb-2">{innovation.title}</h3>
-                      <p className="text-muted-foreground mb-4 leading-relaxed">{innovation.description}</p>
+                      <p className="text-white/70 mb-4 leading-relaxed">{innovation.description}</p>
                       <div className="bg-success/10 text-success px-3 py-1 rounded-full text-sm font-medium inline-block">
                         Impact: {innovation.impact}
                       </div>
@@ -396,18 +396,18 @@ const RnD = () => {
       </section>
 
       {/* R&D Capabilities */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">R&D Capabilities</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">R&D Capabilities</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
               World-class research infrastructure and expertise driving innovation in temperature control technology.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {capabilities.map((capability, index) => (
-              <Card key={index} className="card-professional">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-secondary/10 p-3 rounded-lg">
@@ -415,7 +415,7 @@ const RnD = () => {
                     </div>
                     <CardTitle className="text-xl">{capability.title}</CardTitle>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {capability.description}
                   </p>
                 </CardHeader>
@@ -440,15 +440,15 @@ const RnD = () => {
       {/* <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Research Partnerships</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Research Partnerships</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
               Collaborating with leading institutions to accelerate innovation and knowledge transfer.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {partnerships.map((partnership, index) => (
-              <Card key={index} className="card-professional">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-primary/10 p-2 rounded-lg">
@@ -459,8 +459,8 @@ const RnD = () => {
                       <Badge variant="outline" className="mb-3">
                         {partnership.type}
                       </Badge>
-                      <p className="text-muted-foreground text-sm mb-2">{partnership.focus}</p>
-                      <div className="text-xs text-muted-foreground">
+                      <p className="text-white/70 text-sm mb-2">{partnership.focus}</p>
+                      <div className="text-xs text-white/70">
                         Duration: {partnership.duration}
                       </div>
                     </div>
@@ -504,12 +504,12 @@ const RnD = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Target className="h-16 w-16 mx-auto mb-6 text-primary" />
             <h2 className="text-3xl font-bold mb-6">Partner with Our Innovation</h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Interested in collaborating on research projects or need custom temperature control solutions? 
               Our R&D team is ready to work with you.
             </p>
@@ -746,7 +746,7 @@ const RnD = () => {
             </div>
             
             <div className="mt-8 text-center">
-              <p className="text-muted-foreground">
+              <p className="text-white/70">
                 📧 R&D Team: research@el21systems.com | 📞 +91 98765 43211
               </p>
             </div>
@@ -758,10 +758,10 @@ const RnD = () => {
       <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               R&D Facility & Innovation Lab
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto">
               Take a virtual tour of our state-of-the-art research and development facilities
             </p>
           </div>

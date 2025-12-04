@@ -1,22 +1,29 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import WhyChooseUsSection from '@/components/WhyChooseUsSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import ProductsSection from '@/components/ProductsSection';
-import IndustryApplicationsSection from '@/components/IndustryApplicationsSection';
+import SmartFeaturesSection from '@/components/SmartFeaturesSection';
+import ProductCategorySlider from '@/components/ProductCategorySlider';
+import VideoShowcaseSection from '@/components/VideoShowcaseSection';
+import IndustriesScrollSection from '@/components/IndustriesScrollSection';
+import ProductHighlightsSection from '@/components/ProductHighlightsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import AboutSection from '@/components/AboutSection';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Home = () => {
   return (
     <Layout>
+      {/* 2026 Future-Ready Design */}
       <HeroSection />
-      <WhyChooseUsSection />
-      <ProductsSection />
-      <IndustryApplicationsSection />
+      <SmartFeaturesSection />
+      <ProductCategorySlider />
+      <VideoShowcaseSection />
+      <IndustriesScrollSection />
+      <ProductHighlightsSection />
       <TestimonialsSection />
-      <AboutSection />
+      {/* ContactSection is automatically added by Layout component */}
+
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsApp />
     </Layout>
   );
 };

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { motion } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
@@ -288,7 +289,7 @@ const Services = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               Comprehensive Industrial Support
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed font-medium">
+            <p className="text-xl text-white/70 mb-8 leading-relaxed font-medium">
               From custom manufacturing to 24/7 technical support, we provide end-to-end 
               services to ensure your temperature control systems perform at their best.
             </p>
@@ -297,11 +298,11 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Professional Services</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Professional Services</h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Our comprehensive service portfolio ensures you get maximum value from your 
               temperature control investment throughout its entire lifecycle.
             </p>
@@ -309,7 +310,7 @@ const Services = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {mainServices.map((service, index) => (
-              <Card key={index} className="card-professional group">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10 group">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -317,7 +318,7 @@ const Services = () => {
                     </div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {service.description}
                   </p>
                 </CardHeader>
@@ -347,18 +348,18 @@ const Services = () => {
       </section>
 
       {/* Support Services */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-gradient-to-b from-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Support Excellence</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Support Excellence</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
               Additional support services that make El 21 Systems your trusted long-term partner.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {supportServices.map((service, index) => (
-              <Card key={index} className="card-professional text-center">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10 text-center">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
                     <div className="bg-secondary/10 p-3 rounded-lg">
@@ -366,7 +367,7 @@ const Services = () => {
                     </div>
                   </div>
                   <h3 className="font-bold mb-3">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-sm text-white/70 mb-4 leading-relaxed">
                     {service.description}
                   </p>
                   <div className="bg-success/10 text-success px-3 py-1 rounded-full text-xs font-medium">
@@ -383,8 +384,8 @@ const Services = () => {
       {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-section-title mb-6">Service Packages</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Service Packages</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
               Choose the service level that best fits your operational needs and budget.
             </p>
           </div>
@@ -578,7 +579,7 @@ const Services = () => {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-16 bg-gradient-surface">
+      <section className="py-16 bg-gradient-to-b from-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-primary text-primary-foreground border-0">
@@ -587,7 +588,7 @@ const Services = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Powering India's Leading Industries
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               Our cutting-edge temperature control solutions drive success across diverse industrial sectors
             </p>
           </div>
@@ -603,17 +604,17 @@ const Services = () => {
               { name: 'Laboratory Equipment', icon: '🔬', desc: 'Research accuracy' },
               { name: 'Process Automation', icon: '🤖', desc: 'Smart manufacturing' }
             ].map((industry, idx) => (
-              <div key={idx} className="bg-card rounded-xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group">
+              <div key={idx} className="glass-card-2026 hover-3d rounded-xl p-6 border-white/10 transition-all duration-300 group">
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{industry.icon}</div>
-                <h3 className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors">{industry.name}</h3>
-                <p className="text-sm text-muted-foreground">{industry.desc}</p>
+                <h3 className="font-bold mb-2 text-white group-hover:text-[#f7d000] transition-colors">{industry.name}</h3>
+                <p className="text-sm text-white/70">{industry.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 text-center">
-            <h3 className="text-2xl font-bold mb-4">Need Custom Solutions?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <div className="glass-card-2026 hover-3d rounded-2xl p-8 border-white/20 text-center">
+            <h3 className="text-2xl font-bold mb-4 text-white">Need Custom Solutions?</h3>
+            <p className="text-white/70 mb-6 max-w-2xl mx-auto">
               Our engineering team specializes in creating tailored temperature control solutions for unique industrial requirements.
             </p>
             
@@ -739,10 +740,10 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-section-title mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
               Our Service Excellence Gallery
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto">
               See our expert technicians in action, delivering professional installation and maintenance services
             </p>
           </div>

@@ -97,6 +97,29 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* 2026 Future Theme - Dark/Neon */
+  :root.future-2026 {
+    /* 2026 Core Colors */
+    --neon-red: #ff385c;
+    --neon-yellow: #f7d000;
+    --dark-blue: #021526;
+    --electric-blue: #0077ff;
+    --glass-white: rgba(255,255,255,0.08);
+
+    --background: 210 100% 8%;
+    --foreground: 0 0% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent-purple: 280 85% 60%;
+    --accent-cyan: 190 85% 55%;
+    --accent-pink: 340 85% 65%;
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -444,5 +467,237 @@
   /* Search bar animations */
   .search-expand {
     animation: fade-in 0.2s ease-out;
+  }
+
+  /* ====== 2026 FUTURE DESIGN SYSTEM ====== */
+
+  /* Glassmorphism Effects */
+  .glass-card-2026 {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-dark {
+    background: rgba(2, 21, 38, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-red {
+    box-shadow: 0 0 20px rgba(255, 56, 92, 0.6),
+                0 0 40px rgba(255, 56, 92, 0.4),
+                0 0 60px rgba(255, 56, 92, 0.2);
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                0 0 40px rgba(0, 119, 255, 0.4),
+                0 0 60px rgba(0, 119, 255, 0.2);
+  }
+
+  .neon-glow-yellow {
+    box-shadow: 0 0 20px rgba(247, 208, 0, 0.6),
+                0 0 40px rgba(247, 208, 0, 0.4),
+                0 0 60px rgba(247, 208, 0, 0.2);
+  }
+
+  /* 3D Transform Effects */
+  .hover-3d {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-3d:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateZ(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Particle Background */
+  .particle-background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particle-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(0, 119, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 56, 92, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(247, 208, 0, 0.1) 0%, transparent 50%);
+    animation: particle-drift 20s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  @keyframes particle-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(5%, 5%) scale(1.1); }
+    66% { transform: translate(-5%, -5%) scale(0.9); }
+  }
+
+  /* Circuit Overlay Effect */
+  .circuit-overlay {
+    position: relative;
+  }
+
+  .circuit-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      linear-gradient(90deg, rgba(0, 119, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(0, 119, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Animated Gradient Background */
+  .gradient-animated {
+    background: linear-gradient(45deg, #021526, #0077ff, #ff385c, #f7d000);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Floating Animation */
+  @keyframes float-3d {
+    0%, 100% {
+      transform: translateY(0px) translateZ(0px);
+    }
+    50% {
+      transform: translateY(-20px) translateZ(20px);
+    }
+  }
+
+  .float-3d {
+    animation: float-3d 4s ease-in-out infinite;
+  }
+
+  /* Scroll Indicators */
+  .scroll-indicator {
+    position: relative;
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+  }
+
+  .scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: scroll-down 2s infinite;
+  }
+
+  @keyframes scroll-down {
+    0% {
+      opacity: 1;
+      top: 8px;
+    }
+    100% {
+      opacity: 0;
+      top: 32px;
+    }
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%
+    );
+    animation: shimmer-slide 2s infinite;
+  }
+
+  @keyframes shimmer-slide {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Holographic Effect */
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      #ff0080 0%,
+      #ff8c00 20%,
+      #40e0d0 40%,
+      #0080ff 60%,
+      #8000ff 80%,
+      #ff0080 100%
+    );
+    background-size: 200% 200%;
+    animation: holographic-shift 3s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes holographic-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* Ribbon Effects */
+  .ribbon {
+    position: relative;
+  }
+
+  .ribbon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0 solid transparent;
+    border-top-width: 50px;
+    border-right-width: 50px;
+    border-top-color: #ff385c;
+  }
+
+  .ribbon::after {
+    content: 'NEW';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    transform: rotate(45deg);
   }
 }

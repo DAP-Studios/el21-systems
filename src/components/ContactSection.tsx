@@ -118,16 +118,16 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4">Contact Us</Badge>
-          <h2 className="text-section-title mb-6">
-            Get Your Free Quote Today
+          <Badge className="mb-4 bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0">Contact Us</Badge>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            Get Your Free <span className="holographic">Quote</span> Today
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Ready to upgrade your temperature control systems? Our experts are here to help 
+          <p className="text-lg text-white/70 leading-relaxed">
+            Ready to upgrade your temperature control systems? Our experts are here to help
             you find the perfect solution for your industrial needs.
           </p>
         </div>
@@ -135,10 +135,10 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <Card className="card-professional mb-8">
+            <Card className="glass-card-2026 hover-3d border-white/10 mb-8">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-white">
+                  <MessageSquare className="h-5 w-5 text-[#0077ff]" />
                   Contact Information
                 </CardTitle>
               </CardHeader>
@@ -146,16 +146,16 @@ const ContactSection = () => {
                 {contactInfo.map((info, index) => (
                   <div key={index} className="space-y-2">
                     <div className="flex items-center gap-3">
-                      <div className="bg-primary/10 p-2 rounded-lg">
-                        <info.icon className="h-4 w-4 text-primary" />
+                      <div className="glass-dark p-2 rounded-lg border border-white/10">
+                        <info.icon className="h-4 w-4 text-[#0077ff]" />
                       </div>
-                      <h4 className="font-semibold">{info.title}</h4>
+                      <h4 className="font-semibold text-white">{info.title}</h4>
                     </div>
                     <div className="ml-11 space-y-1">
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-sm text-muted-foreground">{detail}</p>
+                        <p key={idx} className="text-sm text-white/70">{detail}</p>
                       ))}
-                      <Button variant="link" size="sm" className="p-0 h-auto text-primary">
+                      <Button variant="link" size="sm" className="p-0 h-auto text-[#0077ff] hover:text-[#ff385c]">
                         {info.action}
                       </Button>
                     </div>
@@ -192,13 +192,13 @@ const ContactSection = () => {
 
           {/* Quote Request Form */}
           <div className="lg:col-span-2">
-            <Card className="card-professional">
+            <Card className="glass-card-2026 hover-3d border-white/10">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Quote className="h-5 w-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-white">
+                  <Quote className="h-5 w-5 text-[#f7d000]" />
                   Request Free Quote
                 </CardTitle>
-                <p className="text-muted-foreground">
+                <p className="text-white/70">
                   Fill out the form below and our experts will get back to you within 24 hours.
                 </p>
               </CardHeader>
@@ -316,34 +316,34 @@ const ContactSection = () => {
         {/* Customer Testimonials */}
         <div>
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold mb-4">What Our Customers Say</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-2xl font-bold mb-4 text-white">What Our Customers Say</h3>
+            <p className="text-white/70">
               Trusted by leading industries across India
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-professional">
+              <Card key={index} className="glass-card-2026 hover-3d border-white/10">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="flex text-yellow-500">
+                    <div className="flex text-[#f7d000]">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <span key={i} className="text-sm">★</span>
                       ))}
                     </div>
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge className="text-xs bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0">
                       {testimonial.product}
                     </Badge>
                   </div>
-                  
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+
+                  <p className="text-white/80 mb-4 text-sm leading-relaxed">
                     "{testimonial.text}"
                   </p>
-                  
-                  <div className="border-t border-border pt-4">
-                    <h4 className="font-semibold text-sm">{testimonial.name}</h4>
-                    <p className="text-xs text-muted-foreground">{testimonial.company}</p>
+
+                  <div className="border-t border-white/20 pt-4">
+                    <h4 className="font-semibold text-sm text-white">{testimonial.name}</h4>
+                    <p className="text-xs text-white/60">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
