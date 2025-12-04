@@ -287,19 +287,19 @@ const RnD = () => {
     <Layout showContactSection={false}>
       <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-accent-purple/20 via-primary/10 to-accent-cyan/20">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="absolute inset-0 grid-pattern opacity-20" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
               Research & Development
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
               Innovating Tomorrow's Temperature Control
             </h1>
-            <p className="text-xl text-white/70 mb-8 leading-relaxed font-medium">
-              Our dedicated R&D center drives innovation in industrial temperature control, 
+            <p className="text-xl text-white/90 mb-8 leading-relaxed font-medium">
+              Our dedicated R&D center drives innovation in industrial temperature control,
               developing cutting-edge technologies that shape the future of manufacturing automation.
             </p>
           </div>
@@ -322,24 +322,24 @@ const RnD = () => {
               <Card key={index} className="glass-card-2026 hover-3d border-white/10 group">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <area.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                    <div className="bg-[#0077ff]/20 p-3 rounded-lg border border-[#0077ff]/30">
+                      <area.icon className="h-6 w-6 text-[#0077ff]" />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl">{area.title}</CardTitle>
-                      <Badge variant="secondary" className="mt-1">
+                      <CardTitle className="text-xl text-white">{area.title}</CardTitle>
+                      <Badge variant="secondary" className="mt-1 bg-[#f7d000]/20 text-[#f7d000] border-[#f7d000]/30">
                         {area.status}
                       </Badge>
                     </div>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-white/80 leading-relaxed">
                     {area.description}
                   </p>
                 </CardHeader>
-                
+
                 <CardContent>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-sm text-white/80">
                       <span>Progress</span>
                       <span className="font-medium">{area.progress}%</span>
                     </div>
@@ -379,11 +379,11 @@ const RnD = () => {
                       <div className="w-1 h-16 bg-border mt-4"></div>
                     )}
                   </div>
-                  <Card className="flex-1 card-professional">
+                  <Card className="flex-1 glass-card-2026 border-white/10">
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-2">{innovation.title}</h3>
-                      <p className="text-white/70 mb-4 leading-relaxed">{innovation.description}</p>
-                      <div className="bg-success/10 text-success px-3 py-1 rounded-full text-sm font-medium inline-block">
+                      <h3 className="text-xl font-bold mb-2 text-white">{innovation.title}</h3>
+                      <p className="text-white/80 mb-4 leading-relaxed">{innovation.description}</p>
+                      <div className="bg-[#00ff88]/20 text-[#00ff88] px-3 py-1 rounded-full text-sm font-medium inline-block border border-[#00ff88]/30">
                         Impact: {innovation.impact}
                       </div>
                     </CardContent>
@@ -410,22 +410,22 @@ const RnD = () => {
               <Card key={index} className="glass-card-2026 hover-3d border-white/10">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-secondary/10 p-3 rounded-lg">
-                      <capability.icon className="h-6 w-6 text-secondary" />
+                    <div className="bg-[#ff385c]/20 p-3 rounded-lg border border-[#ff385c]/30">
+                      <capability.icon className="h-6 w-6 text-[#ff385c]" />
                     </div>
-                    <CardTitle className="text-xl">{capability.title}</CardTitle>
+                    <CardTitle className="text-xl text-white">{capability.title}</CardTitle>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-white/80 leading-relaxed">
                     {capability.description}
                   </p>
                 </CardHeader>
-                
+
                 <CardContent>
                   <div className="space-y-3">
                     {capability.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="h-4 w-4 text-[#00ff88] flex-shrink-0" />
+                        <span className="text-sm text-white/80">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -507,10 +507,10 @@ const RnD = () => {
       <section className="py-20 bg-gradient-to-b from-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Target className="h-16 w-16 mx-auto mb-6 text-primary" />
-            <h2 className="text-3xl font-bold mb-6">Partner with Our Innovation</h2>
-            <p className="text-xl text-white/70 mb-8 leading-relaxed">
-              Interested in collaborating on research projects or need custom temperature control solutions? 
+            <Target className="h-16 w-16 mx-auto mb-6 text-[#0077ff]" />
+            <h2 className="text-3xl font-bold mb-6 text-white">Partner with Our Innovation</h2>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              Interested in collaborating on research projects or need custom temperature control solutions?
               Our R&D team is ready to work with you.
             </p>
             
@@ -744,9 +744,9 @@ const RnD = () => {
                 </DialogContent>
               </Dialog>
             </div>
-            
+
             <div className="mt-8 text-center">
-              <p className="text-white/70">
+              <p className="text-white/90">
                 📧 R&D Team: research@el21systems.com | 📞 +91 98765 43211
               </p>
             </div>
@@ -755,13 +755,13 @@ const RnD = () => {
       </section>
 
       {/* R&D Facility Gallery */}
-      <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
+      <section className="py-20 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
               R&D Facility & Innovation Lab
             </h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <p className="text-white/90 max-w-2xl mx-auto">
               Take a virtual tour of our state-of-the-art research and development facilities
             </p>
           </div>

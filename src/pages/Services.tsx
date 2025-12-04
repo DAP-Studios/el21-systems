@@ -278,19 +278,19 @@ const Services = () => {
     <Layout showContactSection={false}>
       <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-primary/20 via-accent-cyan/10 to-secondary/20">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="absolute inset-0 grid-pattern opacity-20" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
               Professional Services
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
               Comprehensive Industrial Support
             </h1>
-            <p className="text-xl text-white/70 mb-8 leading-relaxed font-medium">
-              From custom manufacturing to 24/7 technical support, we provide end-to-end 
+            <p className="text-xl text-white/90 mb-8 leading-relaxed font-medium">
+              From custom manufacturing to 24/7 technical support, we provide end-to-end
               services to ensure your temperature control systems perform at their best.
             </p>
           </div>
@@ -313,22 +313,22 @@ const Services = () => {
               <Card key={index} className="glass-card-2026 hover-3d border-white/10 group">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <service.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                    <div className="bg-[#0077ff]/20 p-3 rounded-lg border border-[#0077ff]/30">
+                      <service.icon className="h-6 w-6 text-[#0077ff]" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-white">{service.title}</CardTitle>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-white/80 leading-relaxed">
                     {service.description}
                   </p>
                 </CardHeader>
-                
+
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="h-4 w-4 text-[#00ff88] flex-shrink-0" />
+                        <span className="text-sm text-white/80">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -362,15 +362,15 @@ const Services = () => {
               <Card key={index} className="glass-card-2026 hover-3d border-white/10 text-center">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    <div className="bg-secondary/10 p-3 rounded-lg">
-                      <service.icon className="h-6 w-6 text-secondary" />
+                    <div className="bg-[#ff385c]/20 p-3 rounded-lg border border-[#ff385c]/30">
+                      <service.icon className="h-6 w-6 text-[#ff385c]" />
                     </div>
                   </div>
-                  <h3 className="font-bold mb-3">{service.title}</h3>
-                  <p className="text-sm text-white/70 mb-4 leading-relaxed">
+                  <h3 className="font-bold mb-3 text-white">{service.title}</h3>
+                  <p className="text-sm text-white/80 mb-4 leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="bg-success/10 text-success px-3 py-1 rounded-full text-xs font-medium">
+                  <div className="bg-[#00ff88]/20 text-[#00ff88] px-3 py-1 rounded-full text-xs font-medium border border-[#00ff88]/30">
                     {service.highlight}
                   </div>
                 </CardContent>
@@ -737,13 +737,13 @@ const Services = () => {
       </section>
 
       {/* Service Gallery */}
-      <section className="py-20 bg-gradient-to-br from-background via-accent-purple/5 to-accent-cyan/5">
+      <section className="py-20 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
               Our Service Excellence Gallery
             </h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
+            <p className="text-white/90 max-w-2xl mx-auto">
               See our expert technicians in action, delivering professional installation and maintenance services
             </p>
           </div>

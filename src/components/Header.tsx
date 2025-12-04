@@ -70,7 +70,7 @@ const Header = () => {
       )}
 
       {/* Main Header */}
-      <header className={`bg-white/95 border-b border-border/50 sticky top-0 z-50 backdrop-blur-lg transition-all duration-300 flex items-center justify-center ${
+      <header className={`bg-[#021526]/95 border-b border-white/10 sticky top-0 z-50 backdrop-blur-lg transition-all duration-300 flex items-center justify-center ${
         isScrolled ? 'shadow-xl h-14' : 'shadow-lg h-16'
       }`}>
         <div className="container mx-auto px-4">
@@ -101,13 +101,13 @@ const Header = () => {
                 }`}
               >
                 <h1
-                  className={`font-black bg-gradient-to-r from-secondary via-accent-purple to-accent-cyan bg-clip-text text-transparent transition-all duration-300 ${
+                  className={`font-black bg-gradient-to-r from-[#ff385c] via-[#f7d000] to-[#0077ff] bg-clip-text text-transparent transition-all duration-300 ${
                     isScrolled ? 'text-xl' : 'text-2xl'
                   }`}
                 >
                   El 21 Systems
                 </h1>
-                <p className="text-xs text-muted-foreground font-medium">
+                <p className="text-xs text-white/70 font-medium">
                   Temperature Control Solutions
                 </p>
               </div>
@@ -115,42 +115,42 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className={`font-medium transition-colors ${
-                  isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  isActive('/') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
                 }`}
               >
                 Home
               </Link>
-              <Link 
-                to="/shop" 
+              <Link
+                to="/shop"
                 className={`font-medium transition-colors ${
-                  isActive('/shop') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  isActive('/shop') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
                 }`}
               >
                 Shop
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className={`font-medium transition-colors ${
-                  isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  isActive('/about') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
                 }`}
               >
                 About Us
               </Link>
-              <Link 
-                to="/services" 
+              <Link
+                to="/services"
                 className={`font-medium transition-colors ${
-                  isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  isActive('/services') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
                 }`}
               >
                 Services
               </Link>
-              <Link 
-                to="/research" 
+              <Link
+                to="/research"
                 className={`font-medium transition-colors ${
-                  isActive('/research') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  isActive('/research') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
                 }`}
               >
                 R&D
@@ -165,16 +165,16 @@ const Header = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-muted transition-all duration-300 hover:scale-110 group"
+                  className="p-2 rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110 group"
                   aria-label={social.label}
                 >
                   <social.icon
-                    className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"
+                    className="h-5 w-5 text-white/70 group-hover:text-[#0077ff] transition-colors"
                     style={{ color: 'inherit' }}
                   />
                 </a>
               ))}
-              <div className="w-px h-6 bg-border mx-2"></div>
+              <div className="w-px h-6 bg-white/20 mx-2"></div>
               <Button
                 size="sm"
                 className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 neon-glow-blue"
@@ -192,11 +192,11 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
             </button>
           </div>
 
@@ -204,21 +204,21 @@ const Header = () => {
       </header>
 
       {/* Mobile Navigation Sidebar */}
-      <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+      <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-[#021526] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-border">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="flex items-center justify-between p-6 border-b border-white/20">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-[#ff385c] via-[#f7d000] to-[#0077ff] bg-clip-text text-transparent">
               Menu
             </h2>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
               aria-label="Close menu"
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 text-white" />
             </button>
           </div>
 
@@ -227,9 +227,9 @@ const Header = () => {
             <Link
               to="/"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/') 
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
-                  : 'text-foreground hover:bg-muted'
+                isActive('/')
+                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
               ref={firstMobileLinkRef}
@@ -239,9 +239,9 @@ const Header = () => {
             <Link
               to="/shop"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/shop') 
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
-                  : 'text-foreground hover:bg-muted'
+                isActive('/shop')
+                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -250,9 +250,9 @@ const Header = () => {
             <Link
               to="/about"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/about') 
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
-                  : 'text-foreground hover:bg-muted'
+                isActive('/about')
+                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -261,9 +261,9 @@ const Header = () => {
             <Link
               to="/services"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/services') 
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
-                  : 'text-foreground hover:bg-muted'
+                isActive('/services')
+                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -272,9 +272,9 @@ const Header = () => {
             <Link
               to="/research"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/research') 
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
-                  : 'text-foreground hover:bg-muted'
+                isActive('/research')
+                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -283,7 +283,7 @@ const Header = () => {
 
             {/* Mobile Social Links */}
             <div className="pt-6 mt-auto space-y-4">
-              <div className="flex justify-center gap-4 pb-4 border-b border-border">
+              <div className="flex justify-center gap-4 pb-4 border-b border-white/20">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}

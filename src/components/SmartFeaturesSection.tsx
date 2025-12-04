@@ -92,7 +92,7 @@ const SmartFeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: feature.delay, duration: 0.6 }}
-              whileHover={{ scale: 1.05, rotateY: 5 }}
+              whileHover={{ scale: 1.03 }}
               className="group"
             >
               <div className="glass-card-2026 p-8 rounded-3xl h-full relative overflow-hidden hover-3d">
@@ -105,8 +105,8 @@ const SmartFeaturesSection = () => {
                 {/* Icon Container */}
                 <motion.div
                   className="relative mb-6"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div
                     className="w-20 h-20 rounded-2xl flex items-center justify-center glass-dark"

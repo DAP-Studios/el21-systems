@@ -93,29 +93,6 @@ const ContactSection = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: 'Rajesh Sharma',
-      company: 'Gujarat Plastics Ltd.',
-      rating: 5,
-      text: 'Excellent quality temperature controllers. El 21 Systems has been our trusted partner for 3 years.',
-      product: 'AI-7981 Controllers'
-    },
-    {
-      name: 'Priya Patel',
-      company: 'Chemical Industries Inc.',
-      rating: 5,
-      text: 'Outstanding technical support and reliable products. Highly recommend for industrial applications.',
-      product: 'Process Indicators'
-    },
-    {
-      name: 'Amit Kumar',
-      company: 'Food Processing Co.',
-      rating: 5,
-      text: 'Professional service and competitive pricing. Their programmers have improved our efficiency significantly.',
-      product: 'BL-886 Programmer'
-    }
-  ];
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
@@ -310,44 +287,6 @@ const ContactSection = () => {
                 </form>
               </CardContent>
             </Card>
-          </div>
-        </div>
-
-        {/* Customer Testimonials */}
-        <div>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold mb-4 text-white">What Our Customers Say</h3>
-            <p className="text-white/70">
-              Trusted by leading industries across India
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-card-2026 hover-3d border-white/10">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex text-[#f7d000]">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <span key={i} className="text-sm">★</span>
-                      ))}
-                    </div>
-                    <Badge className="text-xs bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border-0">
-                      {testimonial.product}
-                    </Badge>
-                  </div>
-
-                  <p className="text-white/80 mb-4 text-sm leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-
-                  <div className="border-t border-white/20 pt-4">
-                    <h4 className="font-semibold text-sm text-white">{testimonial.name}</h4>
-                    <p className="text-xs text-white/60">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </div>
