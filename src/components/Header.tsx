@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoBImg from '/assets/image/logob.png';
-import logoOImg from '/assets/image/logoo.png';
+import logoImg from '/assets/image/name.png';
 
 /**
  * Header component displays the main navigation bar and logo for El 21 Systems.
@@ -81,7 +80,7 @@ const Header = () => {
                 }`}
               >
                 <img
-                  src={isHovered ? logoOImg : logoBImg}
+                  src={logoImg}
                   alt="El 21 Systems Logo"
                   className={`object-contain transition-all duration-300 ${
                     isScrolled ? 'h-10 w-10' : 'h-12 w-12'
