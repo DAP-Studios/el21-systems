@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoBImg from '/assets/image/logob.png';
-import logoOImg from '/assets/image/logoo.png';
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/el21systems', label: 'Facebook', color: '#0077ff' },
@@ -19,7 +17,6 @@ const socialLinks = [
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   
   const location = useLocation();
   const firstMobileLinkRef = React.useRef<HTMLAnchorElement>(null);
@@ -79,19 +76,17 @@ const Header = () => {
             <Link
               to="/"
               className="flex items-center space-x-3 group"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
             >
               <div
-                className={`bg-gradient-to-br from-dark-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? 'h-10 w-10' : 'h-12 w-12'
+                className={`glass-card-2026 p-2 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled ? '' : ''
                 }`}
               >
                 <img
-                  src={isHovered ? logoOImg : logoBImg}
+                  src="/assets/image/logo.png"
                   alt="El 21 Systems Logo"
                   className={`object-contain transition-all duration-300 ${
-                    isScrolled ? 'h-10 w-10' : 'h-12 w-12'
+                    isScrolled ? 'h-8 w-8' : 'h-10 w-10'
                   }`}
                 />
               </div>
@@ -101,7 +96,7 @@ const Header = () => {
                 }`}
               >
                 <h1
-                  className={`font-black bg-gradient-to-r from-[#ff385c] via-[#f7d000] to-[#0077ff] bg-clip-text text-transparent transition-all duration-300 ${
+                  className={`font-black holographic transition-all duration-300 ${
                     isScrolled ? 'text-xl' : 'text-2xl'
                   }`}
                 >
@@ -165,19 +160,18 @@ const Header = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110 group"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110 group border border-white/10"
                   aria-label={social.label}
                 >
                   <social.icon
-                    className="h-5 w-5 text-white/70 group-hover:text-[#0077ff] transition-colors"
-                    style={{ color: 'inherit' }}
+                    className="h-5 w-5 text-white group-hover:text-[#0077ff] transition-colors"
                   />
                 </a>
               ))}
               <div className="w-px h-6 bg-white/20 mx-2"></div>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 neon-glow-blue"
+                className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border border-white/20 px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {

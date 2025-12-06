@@ -285,7 +285,7 @@ const RnD = () => {
 
   return (
     <Layout showContactSection={false}>
-      <div className="pt-20">
+      <div>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="absolute inset-0 grid-pattern opacity-20" />

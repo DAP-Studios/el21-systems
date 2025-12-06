@@ -157,7 +157,7 @@ const Shop = () => {
 
   return (
     <Layout showContactSection={false}>
-      <div className="pt-20">
+      <div>
       {/* Hero Section - 2026 Style */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#021526] via-[#0077ff]/20 to-[#021526] overflow-hidden">
         <div className="circuit-overlay absolute inset-0 opacity-20" />
