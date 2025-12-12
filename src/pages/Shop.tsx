@@ -173,8 +173,8 @@ const Shop = () => {
             <div className="inline-block mb-6 glass-card-2026 px-6 py-3 rounded-full">
               <span className="text-[#f7d000] font-bold text-lg">Professional Shop</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6 text-white">
-              Industrial <span className="holographic">Equipment</span> Store
+            <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">
+              Industrial <span className="text-[#FF4500]">Equipment</span> Store
             </h1>
             <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Browse our comprehensive catalog of precision instruments, controllers, and measurement devices.
@@ -252,23 +252,15 @@ const Shop = () => {
                           {product.category}
                         </Badge>
                       </div>
-                      {/* NEW Ribbon */}
-                      {index < 3 && (
-                        <div className="absolute top-0 right-0">
-                          <div className="bg-[#ff385c] text-white px-4 py-1 text-xs font-bold transform rotate-45 translate-x-8 translate-y-4">
-                            NEW
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </CardHeader>
 
                   <CardContent className="p-6">
-                    <CardTitle className="mb-4 text-xl leading-tight text-white group-hover:holographic transition-all duration-300">
+                    <CardTitle className="mb-3 text-base leading-tight text-white group-hover:text-[#FF4500] transition-all duration-300">
                       {product.name}
                     </CardTitle>
 
-                    <p className="text-white/60 text-sm mb-4 line-clamp-2">
+                    <p className="text-white/60 text-xs mb-4 line-clamp-2">
                       {product.description}
                     </p>
 

@@ -4,10 +4,9 @@ import { Phone, Mail, MapPin, Clock, ArrowUp, Facebook, Instagram, Linkedin, You
 import { Button } from '@/components/ui/button';
 
 const socialLinks = [
-  { icon: Facebook, href: 'https://facebook.com/el21systems', label: 'Facebook', color: '#0077ff' },
-  { icon: Instagram, href: 'https://instagram.com/el21systems', label: 'Instagram', color: '#ff385c' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/el21systems', label: 'LinkedIn', color: '#0077ff' },
-  { icon: Youtube, href: 'https://youtube.com/@el21systems', label: 'YouTube', color: '#ff0000' },
+  { icon: Facebook, href: 'https://www.facebook.com/share/1AjjsyKnwi/', label: 'Facebook', color: '#0041C2' },
+  { icon: Instagram, href: 'https://www.instagram.com/el21_systems?igsh=NjhwNzEycnIyYjQx', label: 'Instagram', color: '#FF4500' },
+  { icon: Youtube, href: 'https://www.youtube.com/@ShaileshRathod-c6c', label: 'YouTube', color: '#FF4500' },
 ];
 
 const Footer = () => {
@@ -40,7 +39,7 @@ const Footer = () => {
 
             {/* Social Media Icons */}
             <div className="pt-4">
-              <h4 className="text-sm font-bold mb-3 text-[#f7d000]">Follow Us</h4>
+              <h4 className="text-sm font-bold mb-3 text-[#FF4500]">Follow Us</h4>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
                   <a
@@ -48,25 +47,25 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass-card-2026 p-3 rounded-xl hover:scale-110 transition-all duration-300 hover-3d"
+                    className="glass-card-2026 p-2 rounded-xl hover:scale-110 transition-all duration-300 hover-3d"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-5 w-5" style={{ color: social.color }} />
+                    <social.icon className="h-4 w-4" style={{ color: social.color }} />
                   </a>
                 ))}
               </div>
             </div>
 
             <div className="mt-6 text-sm text-white/60">
-              <p>© 2025 El 21 Systems.</p>
+              <p>© 2025 EL21 Systems.</p>
               <p>All rights reserved.</p>
-              <p className="mt-2 font-semibold text-[#0077ff]">ISO 9001:2015 Certified</p>
+              <p className="mt-2 font-semibold text-[#FF4500]">ISO 9001:2015 Certified</p>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4 text-[#0077ff]">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-4 text-[#0041C2]">Quick Links</h4>
             <div className="space-y-2">
               {[
                 { label: 'Home & Shop', href: '/' },
@@ -77,7 +76,7 @@ const Footer = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="block text-white/70 hover:text-[#ff385c] transition-colors text-sm hover:translate-x-1 transform duration-200"
+                  className="block text-white/70 hover:text-[#FF4500] transition-colors text-sm hover:translate-x-1 transform duration-200"
                 >
                   → {link.label}
                 </Link>
@@ -87,7 +86,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="font-bold text-lg mb-4 text-[#ff385c]">Our Products</h4>
+            <h4 className="font-bold text-lg mb-4 text-[#FF4500]">Our Products</h4>
             <div className="space-y-2">
               {[
                 'Temperature Controllers',
@@ -106,22 +105,22 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4 text-[#f7d000]">Contact Info</h4>
+            <h4 className="font-bold text-lg mb-4 text-[#0041C2]">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <div className="glass-card-2026 p-2 rounded-lg">
-                  <Phone className="h-4 w-4 text-[#0077ff]" />
+                  <Phone className="h-4 w-4 text-[#0041C2]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">Phone Numbers</p>
-                  <p className="text-white/70 text-sm">+91 98765 43210</p>
-                  <p className="text-white/70 text-sm">+91 87654 32109</p>
+                  <p className="text-white/70 text-sm">+91 78599 14979</p>
+                  <p className="text-white/70 text-sm">+91 97253 62234</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <div className="glass-card-2026 p-2 rounded-lg">
-                  <Mail className="h-4 w-4 text-[#ff385c]" />
+                  <Mail className="h-4 w-4 text-[#FF4500]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">Email</p>
@@ -132,7 +131,7 @@ const Footer = () => {
 
               <div className="flex items-start gap-3">
                 <div className="glass-card-2026 p-2 rounded-lg">
-                  <MapPin className="h-4 w-4 text-[#f7d000]" />
+                  <MapPin className="h-4 w-4 text-[#FF4500]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">Address</p>
@@ -146,7 +145,7 @@ const Footer = () => {
 
               <div className="flex items-start gap-3">
                 <div className="glass-card-2026 p-2 rounded-lg">
-                  <Clock className="h-4 w-4 text-[#00ff88]" />
+                  <Clock className="h-4 w-4 text-[#25D366]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">Business Hours</p>
@@ -204,12 +203,12 @@ const Footer = () => {
             {/* Extra info + back to top */}
             <div className="flex items-center gap-4">
               <div className="text-sm text-white/70">
-                Response Rate: <span className="text-[#00ff88] font-bold">94%</span> | <span className="text-[#f7d000] font-bold">500+</span> Happy Customers
+                Response Rate: <span className="text-[#25D366] font-bold">94%</span> | <span className="text-[#FF4500] font-bold">500+</span> Happy Customers
               </div>
               <Button
                 onClick={scrollToTop}
                 size="sm"
-                className="rounded-full p-2 bg-gradient-to-r from-[#0077ff] to-[#ff385c] hover:scale-110 transition-all duration-300 neon-glow-blue"
+                className="rounded-full p-2 bg-gradient-to-r from-[#FF4500] to-[#0041C2] hover:scale-110 transition-all duration-300 neon-glow-orange"
                 aria-label="Back to top"
               >
                 <ArrowUp className="h-4 w-4 text-white" />

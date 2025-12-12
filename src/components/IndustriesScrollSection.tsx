@@ -43,13 +43,13 @@ const industries = [
 
 const IndustriesScrollSection = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-[#021526] to-[#041e3a]">
+    <section className="relative py-20 lg:py-0 lg:min-h-screen overflow-hidden bg-gradient-to-b from-[#021526] to-[#041e3a]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,#0077ff_1px,transparent_1px),linear-gradient(-45deg,#ff385c_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+  <div className="container mx-auto px-4 relative z-10 flex items-center lg:min-h-screen">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -84,26 +84,22 @@ const IndustriesScrollSection = () => {
               {[...industries, ...industries, ...industries].map((industry, index) => (
                 <motion.div
                   key={index}
-                  className="flex-shrink-0 w-64"
-                  whileHover={{ scale: 1.1, y: -10 }}
+                  className="flex-shrink-0 w-56"
+                  whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="glass-card-2026 p-8 rounded-3xl h-full hover-3d">
-                    <motion.div
-                      className="mb-4"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
+                  <div className="glass-card-2026 p-6 rounded-3xl h-full hover-3d">
+                    <div className="mb-4">
                       <div
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto glass-dark"
-                        style={{ boxShadow: `0 0 30px ${industry.color}40` }}
+                        className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto glass-dark"
+                        style={{ boxShadow: `0 0 18px ${industry.color}40` }}
                       >
                         <industry.icon
-                          className="w-10 h-10"
+                          className="w-8 h-8"
                           style={{ color: industry.color }}
                         />
                       </div>
-                    </motion.div>
+                    </div>
                     <h3 className="text-2xl font-bold text-white text-center">
                       {industry.name}
                     </h3>

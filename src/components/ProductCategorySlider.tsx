@@ -128,10 +128,7 @@ const ProductCategorySlider = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.4 }}
               whileHover={{
-                scale: 1.1,
-                rotateY: 10,
-                rotateX: 10,
-                z: 50
+                scale: 1.05
               }}
               className="group cursor-pointer"
               style={{ perspective: '1000px' }}
@@ -144,21 +141,17 @@ const ProductCategorySlider = () => {
                 ></div>
 
                 {/* Icon */}
-                <motion.div
-                  className="relative mb-4 flex justify-center"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                >
+                <div className="relative mb-4 flex justify-center">
                   <div
-                    className="w-16 h-16 rounded-xl flex items-center justify-center glass-dark"
-                    style={{ boxShadow: `0 0 20px ${product.color}40` }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center glass-dark"
+                    style={{ boxShadow: `0 0 14px ${product.color}40` }}
                   >
                     <product.icon
-                      className="w-8 h-8"
+                      className="w-6 h-6"
                       style={{ color: product.color }}
                     />
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Content */}
                 <div className="relative text-center">

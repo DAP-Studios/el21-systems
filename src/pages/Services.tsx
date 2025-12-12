@@ -284,9 +284,9 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
-              Professional Services
+              Our Services
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#FF4500]">
               Comprehensive Industrial Support
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed font-medium">
@@ -301,7 +301,7 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-b from-[#021526] to-[#041e3a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Professional Services</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Our Services</h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Our comprehensive service portfolio ensures you get maximum value from your 
               temperature control investment throughout its entire lifecycle.
@@ -585,7 +585,7 @@ const Services = () => {
             <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-primary text-primary-foreground border-0">
               Industries We Serve
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FF4500]">
               Powering India's Leading Industries
             </h2>
             <p className="text-xl text-white/70 leading-relaxed">
@@ -740,7 +740,7 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-[#FF4500]">
               Our Service Excellence Gallery
             </h2>
             <p className="text-white/90 max-w-2xl mx-auto">

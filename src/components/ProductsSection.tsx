@@ -67,7 +67,7 @@ const ProductsSection = () => {
           <Badge className="mb-4 md:mb-6 px-4 md:px-6 py-2 md:py-3 text-sm md:text-lg font-bold bg-gradient-primary text-primary-foreground border-0">
             Premium Product Range
           </Badge>
-          <h2 className="text-3xl md:text-section-title mb-4 md:mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
+          <h2 className="text-3xl md:text-section-title mb-4 md:mb-8 text-[#FF4500] leading-tight">
             Advanced Temperature Control Solutions
           </h2>
           <p className="text-sm md:text-xl text-muted-foreground leading-relaxed font-medium px-4 md:px-0">

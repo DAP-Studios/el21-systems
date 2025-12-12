@@ -16,29 +16,33 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 12%;
 
-    /* Premium Primary - Deep Industrial Blue */
-    --primary: 220 90% 45%;
+    /* Premium Primary - Electric Orange (EL21 Brand Color) */
+    --primary: 16 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 220 90% 40%;
-    --primary-light: 220 70% 85%;
+    --primary-hover: 16 100% 45%;
+    --primary-light: 16 85% 90%;
 
-    /* Dynamic Secondary - Electric Orange */
-    --secondary: 25 95% 55%;
+    /* Dynamic Secondary - Deep Industrial Blue */
+    --secondary: 220 100% 25%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 25 95% 50%;
-    --secondary-light: 25 85% 90%;
+    --secondary-hover: 220 100% 20%;
+    --secondary-light: 220 70% 85%;
 
-    /* Vibrant Accent Colors */
-    --accent-purple: 280 85% 60%;
-    --accent-purple-foreground: 0 0% 100%;
-    --accent-cyan: 190 85% 55%;
-    --accent-cyan-foreground: 0 0% 100%;
-    --accent-pink: 340 85% 65%;
-    --accent-pink-foreground: 0 0% 100%;
+    /* Accent Colors - Blue Shades */
+    --accent-blue: 220 90% 45%;
+    --accent-blue-foreground: 0 0% 100%;
+    --accent-blue-light: 210 100% 55%;
+    --accent-blue-light-foreground: 0 0% 100%;
+    --accent-navy: 220 100% 15%;
+    --accent-navy-foreground: 0 0% 100%;
 
     /* Success/Trust Green */
     --success: 142 75% 45%;
     --success-foreground: 0 0% 100%;
+
+    /* WhatsApp Green */
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 0 0% 100%;
 
     /* Enhanced Neutral System */
     --muted: 220 15% 97%;
@@ -56,17 +60,17 @@
 
     --radius: 1rem;
 
-    /* Premium Gradient System */
-    --gradient-primary: linear-gradient(135deg, hsl(220 90% 45%) 0%, hsl(220 95% 35%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(30 90% 50%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 90% 25%) 0%, hsl(220 85% 35%) 50%, hsl(220 80% 45%) 100%);
+    /* Premium Gradient System - Orange & Blue Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(16 100% 50%) 0%, hsl(16 100% 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(220 100% 25%) 0%, hsl(220 100% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 100% 12%) 0%, hsl(220 100% 18%) 50%, hsl(220 100% 25%) 100%);
     --gradient-trust: linear-gradient(135deg, hsl(142 75% 45%) 0%, hsl(142 70% 40%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(220 20% 95%) 0%, hsl(220 25% 92%) 100%);
     --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(280 85% 60%) 0%, hsl(285 80% 55%) 100%);
-    --gradient-cyan: linear-gradient(135deg, hsl(190 85% 55%) 0%, hsl(195 80% 50%) 100%);
-    --gradient-pink: linear-gradient(135deg, hsl(340 85% 65%) 0%, hsl(345 80% 60%) 100%);
-    --gradient-rainbow: linear-gradient(135deg, hsl(220 90% 45%) 0%, hsl(280 85% 60%) 25%, hsl(190 85% 55%) 50%, hsl(25 95% 55%) 75%, hsl(340 85% 65%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(16 100% 50%) 0%, hsl(25 100% 50%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(220 90% 45%) 0%, hsl(210 100% 55%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(220 100% 15%) 0%, hsl(220 100% 25%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(16 100% 50%) 0%, hsl(220 100% 25%) 100%);
 
     /* Enhanced Shadow System */
     --shadow-soft: 0 2px 8px -2px rgb(0 0 0 / 0.08), 0 1px 4px -1px rgb(0 0 0 / 0.06);
@@ -97,27 +101,28 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* 2026 Future Theme - Dark/Neon */
+  /* 2026 Future Theme - Orange & Blue */
   :root.future-2026 {
-    /* 2026 Core Colors */
-    --neon-red: #ff385c;
-    --neon-yellow: #f7d000;
-    --dark-blue: #021526;
-    --electric-blue: #0077ff;
+    /* 2026 Core Colors - EL21 Brand */
+    --el21-orange: #FF4500;
+    --el21-blue: #0041C2;
+    --dark-blue: #151B54;
+    --light-blue: #4169E1;
+    --whatsapp-green: #25D366;
     --glass-white: rgba(255,255,255,0.08);
 
-    --background: 210 100% 8%;
+    --background: 220 100% 10%;
     --foreground: 0 0% 98%;
 
-    --primary: 210 100% 50%;
+    --primary: 16 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 100% 60%;
+    --secondary: 220 100% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent-purple: 280 85% 60%;
-    --accent-cyan: 190 85% 55%;
-    --accent-pink: 340 85% 65%;
+    --accent-blue: 220 90% 45%;
+    --accent-blue-light: 210 100% 55%;
+    --accent-navy: 220 100% 15%;
   }
 
   .dark {
@@ -303,20 +308,21 @@
     background: var(--gradient-surface);
   }
 
-  .bg-gradient-purple {
-    background: var(--gradient-purple);
+  /* Orange & Blue Brand Gradients */
+  .bg-gradient-orange {
+    background: var(--gradient-orange);
   }
 
-  .bg-gradient-cyan {
-    background: var(--gradient-cyan);
+  .bg-gradient-blue {
+    background: var(--gradient-blue);
   }
 
-  .bg-gradient-pink {
-    background: var(--gradient-pink);
+  .bg-gradient-brand {
+    background: var(--gradient-brand);
   }
 
-  .bg-gradient-rainbow {
-    background: var(--gradient-rainbow);
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
   }
 
   /* Enhanced Pattern System */
@@ -360,8 +366,8 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
   /* Animation for image scroller */
@@ -487,23 +493,23 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Neon Glow Effects */
-  .neon-glow-red {
-    box-shadow: 0 0 20px rgba(255, 56, 92, 0.6),
-                0 0 40px rgba(255, 56, 92, 0.4),
-                0 0 60px rgba(255, 56, 92, 0.2);
+  /* Neon Glow Effects - Orange & Blue */
+  .neon-glow-orange {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6),
+                0 0 40px rgba(255, 69, 0, 0.4),
+                0 0 60px rgba(255, 69, 0, 0.2);
   }
 
   .neon-glow-blue {
-    box-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
-                0 0 40px rgba(0, 119, 255, 0.4),
-                0 0 60px rgba(0, 119, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 65, 194, 0.6),
+                0 0 40px rgba(0, 65, 194, 0.4),
+                0 0 60px rgba(0, 65, 194, 0.2);
   }
 
-  .neon-glow-yellow {
-    box-shadow: 0 0 20px rgba(247, 208, 0, 0.6),
-                0 0 40px rgba(247, 208, 0, 0.4),
-                0 0 60px rgba(247, 208, 0, 0.2);
+  .neon-glow-whatsapp {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6),
+                0 0 40px rgba(37, 211, 102, 0.4),
+                0 0 60px rgba(37, 211, 102, 0.2);
   }
 
   /* 3D Transform Effects */
@@ -530,9 +536,9 @@
     right: 0;
     bottom: 0;
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(0, 119, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(255, 56, 92, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 20%, rgba(247, 208, 0, 0.1) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(0, 65, 194, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 69, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(65, 105, 225, 0.1) 0%, transparent 50%);
     animation: particle-drift 20s ease-in-out infinite;
     z-index: 0;
   }
@@ -564,9 +570,9 @@
     z-index: 1;
   }
 
-  /* Animated Gradient Background */
+  /* Animated Gradient Background - Orange & Blue */
   .gradient-animated {
-    background: linear-gradient(45deg, #021526, #0077ff, #ff385c, #f7d000);
+    background: linear-gradient(45deg, #151B54, #0041C2, #FF4500, #4169E1);
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
   }
@@ -651,25 +657,22 @@
     100% { left: 100%; }
   }
 
-  /* Holographic Effect */
+  /* Brand Gradient Text - Orange & Blue */
   .holographic {
     background: linear-gradient(
-      45deg,
-      #ff0080 0%,
-      #ff8c00 20%,
-      #40e0d0 40%,
-      #0080ff 60%,
-      #8000ff 80%,
-      #ff0080 100%
+      135deg,
+      #FF4500 0%,
+      #0041C2 50%,
+      #FF4500 100%
     );
     background-size: 200% 200%;
-    animation: holographic-shift 8s linear infinite;
+    animation: brand-shift 8s linear infinite;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  @keyframes holographic-shift {
+  @keyframes brand-shift {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
   }
@@ -687,7 +690,7 @@
     border: 0 solid transparent;
     border-top-width: 50px;
     border-right-width: 50px;
-    border-top-color: #ff385c;
+    border-top-color: #FF4500;
   }
 
   .ribbon::after {

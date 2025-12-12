@@ -7,7 +7,7 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="text-center px-4 space-y-6">
         <div className="space-y-2">
-          <h1 className="text-8xl md:text-9xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-8xl md:text-9xl font-black text-[#FF4500]">
             404
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">

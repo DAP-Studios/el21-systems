@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Zap } from 'lucide-react';
+import { Check, Gauge, Thermometer, Activity } from 'lucide-react';
 
 const highlights = [
   {
@@ -7,21 +7,24 @@ const highlights = [
     feature: 'Variable Speed Control',
     application: 'Textile & Packaging',
     compatibility: 'PLC Compatible',
-    color: '#0077ff'
+    color: '#0077ff',
+    icon: Gauge
   },
   {
     product: 'Temperature Programmer',
     feature: 'Multi-stage Programming',
     application: 'Chemical & Pharma',
     compatibility: 'SCADA Integration',
-    color: '#ff385c'
+    color: '#ff385c',
+    icon: Thermometer
   },
   {
     product: 'Pressure Transmitter',
     feature: '4-20mA Output',
     application: 'Process Industries',
     compatibility: 'Universal Mounting',
-    color: '#f7d000'
+    color: '#f7d000',
+    icon: Activity
   }
 ];
 
@@ -75,7 +78,10 @@ const ProductHighlightsSection = () => {
                     border: `1px solid ${item.color}60`
                   }}
                 >
-                  <Zap className="w-4 h-4 inline mr-2" />
+                  {(() => {
+                    const Icon = item.icon;
+                    return <Icon className="w-4 h-4 inline mr-2" />;
+                  })()}
                   {item.product}
                 </div>
               </div>

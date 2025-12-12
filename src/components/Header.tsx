@@ -4,10 +4,9 @@ import { Menu, X, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const socialLinks = [
-  { icon: Facebook, href: 'https://facebook.com/el21systems', label: 'Facebook', color: '#0077ff' },
-  { icon: Instagram, href: 'https://instagram.com/el21systems', label: 'Instagram', color: '#ff385c' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/el21systems', label: 'LinkedIn', color: '#0077ff' },
-  { icon: Youtube, href: 'https://youtube.com/@el21systems', label: 'YouTube', color: '#ff0000' },
+  { icon: Facebook, href: 'https://www.facebook.com/share/1AjjsyKnwi/', label: 'Facebook', color: '#0041C2' },
+  { icon: Instagram, href: 'https://www.instagram.com/el21_systems?igsh=NjhwNzEycnIyYjQx', label: 'Instagram', color: '#FF4500' },
+  { icon: Youtube, href: 'https://www.youtube.com/@ShaileshRathod-c6c', label: 'YouTube', color: '#FF4500' },
 ];
 
 /**
@@ -77,34 +76,17 @@ const Header = () => {
               to="/"
               className="flex items-center space-x-3 group"
             >
-              <div
-                className={`glass-card-2026 p-2 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? '' : ''
-                }`}
-              >
-                <img
-                  src="/assets/image/logo.png"
-                  alt="El 21 Systems Logo"
-                  className={`object-contain transition-all duration-300 ${
-                    isScrolled ? 'h-8 w-8' : 'h-10 w-10'
-                  }`}
-                />
-              </div>
-              <div
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'scale-90' : 'scale-100'
-                }`}
-              >
-                <h1
-                  className={`font-black holographic transition-all duration-300 ${
-                    isScrolled ? 'text-xl' : 'text-2xl'
-                  }`}
-                >
-                  El 21 Systems
-                </h1>
-                <p className="text-xs text-white/70 font-medium">
-                  Temperature Control Solutions
-                </p>
+              {/* Logo-only header: single logo with white background */}
+              <div className="ml-3">
+                <div className="bg-white rounded-md px-2 py-1 flex items-center justify-center">
+                  <img
+                    src="/assets/image/logo.png"
+                    alt="El 21 Systems Logo"
+                    className={`object-contain transition-all duration-300 ${
+                      isScrolled ? 'h-10 w-24' : 'h-12 w-28'
+                    }`}
+                  />
+                </div>
               </div>
             </Link>
 
@@ -113,7 +95,7 @@ const Header = () => {
               <Link
                 to="/"
                 className={`font-medium transition-colors ${
-                  isActive('/') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
+                  isActive('/') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
                 }`}
               >
                 Home
@@ -121,7 +103,7 @@ const Header = () => {
               <Link
                 to="/shop"
                 className={`font-medium transition-colors ${
-                  isActive('/shop') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
+                  isActive('/shop') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
                 }`}
               >
                 Shop
@@ -129,7 +111,7 @@ const Header = () => {
               <Link
                 to="/about"
                 className={`font-medium transition-colors ${
-                  isActive('/about') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
+                  isActive('/about') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
                 }`}
               >
                 About Us
@@ -137,7 +119,7 @@ const Header = () => {
               <Link
                 to="/services"
                 className={`font-medium transition-colors ${
-                  isActive('/services') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
+                  isActive('/services') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
                 }`}
               >
                 Services
@@ -145,7 +127,7 @@ const Header = () => {
               <Link
                 to="/research"
                 className={`font-medium transition-colors ${
-                  isActive('/research') ? 'text-[#0077ff]' : 'text-white/90 hover:text-[#0077ff]'
+                  isActive('/research') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
                 }`}
               >
                 R&D
@@ -164,14 +146,14 @@ const Header = () => {
                   aria-label={social.label}
                 >
                   <social.icon
-                    className="h-5 w-5 text-white group-hover:text-[#0077ff] transition-colors"
+                    className="h-4 w-4 text-white group-hover:text-[#FF4500] transition-colors"
                   />
                 </a>
               ))}
               <div className="w-px h-6 bg-white/20 mx-2"></div>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white border border-white/20 px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md"
+                className="bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white border border-white/20 px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
@@ -204,7 +186,7 @@ const Header = () => {
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/20">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-[#ff385c] via-[#f7d000] to-[#0077ff] bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold text-[#FF4500]">
               Menu
             </h2>
             <button
@@ -222,7 +204,7 @@ const Header = () => {
               to="/"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                 isActive('/')
-                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
                   : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -234,7 +216,7 @@ const Header = () => {
               to="/shop"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                 isActive('/shop')
-                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
                   : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -245,7 +227,7 @@ const Header = () => {
               to="/about"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                 isActive('/about')
-                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
                   : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -256,7 +238,7 @@ const Header = () => {
               to="/services"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                 isActive('/services')
-                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
                   : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -267,7 +249,7 @@ const Header = () => {
               to="/research"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
                 isActive('/research')
-                  ? 'bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white'
+                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
                   : 'text-white/90 hover:bg-white/10'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -292,7 +274,7 @@ const Header = () => {
                 ))}
               </div>
               <Button
-                className="w-full bg-gradient-to-r from-[#0077ff] to-[#ff385c] text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg neon-glow-blue"
+                className="w-full bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg neon-glow-orange"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {

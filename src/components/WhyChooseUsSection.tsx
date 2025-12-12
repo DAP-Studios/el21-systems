@@ -73,7 +73,7 @@ const WhyChooseUsSection = () => {
             return (
               <div key={index} className="text-center group">
                 <div className={`bg-gradient-to-br ${gradients[index]}/10 rounded-xl md:rounded-2xl p-4 md:p-8 mb-2 md:mb-4 group-hover:${gradients[index]}/20 transition-all duration-300 hover:scale-105`}>
-                  <div className={`text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r ${gradients[index]} bg-clip-text text-transparent mb-1 md:mb-2`}>
+                  <div className={`text-2xl md:text-4xl lg:text-5xl font-bold text-[#FF4500] mb-1 md:mb-2`}>
                     {stat.number}
                   </div>
                   <div className="text-xs md:text-sm lg:text-base font-semibold text-foreground mb-1">

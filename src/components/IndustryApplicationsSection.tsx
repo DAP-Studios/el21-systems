@@ -86,7 +86,7 @@ const IndustryApplicationsSection = () => {
           <Badge className="mb-6 px-6 py-3 text-lg font-bold bg-gradient-purple text-accent-purple-foreground border-0">
             Industry Applications
           </Badge>
-          <h2 className="text-section-title mb-8 bg-gradient-to-r from-accent-purple via-primary to-accent-cyan bg-clip-text text-transparent">
+          <h2 className="text-section-title mb-8 text-[#FF4500]">
             Serving Diverse Industries Across India
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed font-medium">
@@ -106,7 +106,7 @@ const IndustryApplicationsSection = () => {
                     <industry.icon className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent-purple group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    <h3 className="font-bold text-xl transition-colors duration-300 group-hover:text-[#FF4500]">
                       {industry.name}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -117,7 +117,7 @@ const IndustryApplicationsSection = () => {
 
                 {/* Applications */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-sm mb-4 bg-gradient-to-r from-accent-cyan to-accent-purple bg-clip-text text-transparent">Key Applications:</h4>
+                  <h4 className="font-semibold text-sm mb-4 text-[#FF4500]">Key Applications:</h4>
                   <div className="grid grid-cols-2 gap-3">
                     {industry.applications.map((app, appIndex) => (
                       <div key={appIndex} className="flex items-center gap-2">
@@ -145,7 +145,7 @@ const IndustryApplicationsSection = () => {
         <div className="bg-gradient-surface rounded-3xl p-12 glow-primary">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent">
+              <h3 className="text-3xl font-bold mb-8 text-[#FF4500]">
                 Why Industries Choose Our Solutions
               </h3>
               <div className="space-y-4">

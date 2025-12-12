@@ -6,7 +6,6 @@ import ProductCategorySlider from '@/components/ProductCategorySlider';
 import VideoShowcaseSection from '@/components/VideoShowcaseSection';
 import IndustriesScrollSection from '@/components/IndustriesScrollSection';
 import ProductHighlightsSection from '@/components/ProductHighlightsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Home = () => {
@@ -18,8 +17,7 @@ const Home = () => {
       <ProductCategorySlider />
       <VideoShowcaseSection />
       <IndustriesScrollSection />
-      <ProductHighlightsSection />
-      <TestimonialsSection />
+  <ProductHighlightsSection />
       {/* ContactSection is automatically added by Layout component */}
 
       {/* Floating WhatsApp Button */}

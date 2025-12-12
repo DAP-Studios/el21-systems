@@ -295,7 +295,7 @@ const RnD = () => {
             <Badge className="mb-6 bg-gradient-primary text-primary-foreground border-0 px-6 py-3 text-lg font-bold">
               Research & Development
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#FF4500]">
               Innovating Tomorrow's Temperature Control
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed font-medium">
@@ -758,7 +758,7 @@ const RnD = () => {
       <section className="py-20 bg-gradient-to-br from-[#021526] via-[#041e3a] to-[#021526]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-[#0077ff] via-[#ff385c] to-[#f7d000] bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-[#FF4500]">
               R&D Facility & Innovation Lab
             </h2>
             <p className="text-white/90 max-w-2xl mx-auto">

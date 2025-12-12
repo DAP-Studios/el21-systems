@@ -1,16 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap, MessageCircle } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
+import { SiWhatsapp } from 'react-icons/si';
 import ParticlesBackground from './ParticlesBackground';
 import { motion } from 'framer-motion';
-import temperatureController from '@/assets/products/temperature-controller.jpg';
-import proximityImage from '@/assets/products/proximity-sensor.jpg';
-import speedIndicator from '@/assets/products/speed-indicator.jpg';
+// removed static floating product images per design; spline-viewer used as background
 
 const HeroSection2026 = () => {
+  const splineRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Dynamically load spline viewer script
+    const existing = document.querySelector('script[data-spline-viewer]');
+    if (!existing) {
+      const s = document.createElement('script');
+      s.setAttribute('type', 'module');
+      s.setAttribute('data-spline-viewer', '1');
+      s.src = 'https://unpkg.com/@splinetool/viewer@1.12.13/build/spline-viewer.js';
+      document.body.appendChild(s);
+    }
+
+    // create spline-viewer element inside the splineRef container
+    const container = splineRef.current;
+    if (container) {
+      // Clear previous children
+      container.innerHTML = '';
+      const el = document.createElement('spline-viewer');
+      el.setAttribute('url', 'https://prod.spline.design/qyFhITKvkCV8VoJd/scene.splinecode');
+      el.style.width = '100%';
+      el.style.height = '100%';
+      el.style.display = 'block';
+      container.appendChild(el);
+    }
+
+    return () => {
+      // cleanup using captured ref
+      if (container) container.innerHTML = '';
+    };
+  }, []);
   const handleWhatsAppClick = () => {
-    // Replace with your WhatsApp number
-    window.open('https://wa.me/919876543210?text=Hi, I need a quote for your industrial automation products', '_blank');
+    // EL21 Systems WhatsApp
+    window.open('https://wa.me/917859914979?text=Hi, I need a quote for your industrial automation products', '_blank');
   };
 
   const scrollToProducts = () => {
@@ -28,15 +58,15 @@ const HeroSection2026 = () => {
       {/* Particle Animation Background */}
       <ParticlesBackground />
 
-      {/* Circuit Overlay */}
-      <div className="circuit-overlay absolute inset-0 z-0"></div>
+  {/* Circuit Overlay */}
+  <div className="circuit-overlay absolute inset-0 z-0"></div>
 
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#021526]/95 via-[#0077ff]/20 to-[#021526]/95 z-[1]"></div>
+  {/* Spline Viewer Background (replaces dark gradient) */}
+  <div ref={splineRef} className="absolute inset-0 z-0 pointer-events-none" />
 
       {/* Animated Glow Orbs */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-[#ff385c]/20 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0077ff]/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
+      <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF4500]/20 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0041C2]/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="min-h-screen flex items-center justify-center py-20">
@@ -49,16 +79,28 @@ const HeroSection2026 = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Premium Badge */}
+              {/* Company Name - Prominent */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
+                className="mb-4"
+              >
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#FF4500]">
+                  EL21SYSTEMS
+                </h2>
+              </motion.div>
+
+              {/* Premium Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
                 className="inline-flex"
               >
                 <div className="glass-card-2026 px-6 py-3 rounded-full inline-flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-[#f7d000] animate-pulse" />
-                  <span className="text-[#f7d000] font-bold text-sm">Industry 4.0 Ready</span>
+                  <Zap className="h-3 w-3 text-[#FF4500]" />
+                  <span className="text-[#FF4500] font-bold text-sm">Industry 4.0 Ready</span>
                 </div>
               </motion.div>
 
@@ -68,17 +110,17 @@ const HeroSection2026 = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
                   <span className="block text-white mb-2">
                     Next-Gen
                   </span>
-                  <span className="holographic block text-6xl sm:text-7xl lg:text-8xl mb-2">
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl mb-2 text-[#FF4500]">
                     Industrial
                   </span>
-                  <span className="block bg-gradient-to-r from-[#0077ff] via-[#f7d000] to-[#ff385c] bg-clip-text text-transparent">
+                  <span className="block text-[#FF4500]">
                     Automation
                   </span>
-                  <span className="block text-white mt-2 text-4xl sm:text-5xl lg:text-6xl">
+                  <span className="block text-white mt-2 text-3xl sm:text-4xl lg:text-5xl">
                     Solutions
                   </span>
                 </h1>
@@ -91,9 +133,9 @@ const HeroSection2026 = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <span className="text-[#0077ff] font-bold">High-precision Control Systems</span> |
-                <span className="text-[#ff385c] font-bold"> Smart Automation</span> |
-                <span className="text-[#f7d000] font-bold"> Industry 4.0 Ready Products</span>
+                <span className="text-[#FF4500] font-bold">High-precision Control Systems</span>
+                <span className="text-white font-bold"> {' '}|{' '} Smart Automation</span>
+                <span className="text-white font-bold"> {' '}|{' '} Industry 4.0 Ready Products</span>
               </motion.p>
 
               {/* CTA Buttons - 2026 Style */}
@@ -105,20 +147,20 @@ const HeroSection2026 = () => {
               >
                 <Button
                   size="lg"
-                  className="group h-16 px-8 text-lg bg-gradient-to-r from-[#0077ff] to-[#0055cc] hover:from-[#0055cc] hover:to-[#0077ff] text-white border-0 rounded-2xl neon-glow-blue font-bold shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="group h-14 px-8 text-lg bg-gradient-to-r from-[#FF4500] to-[#CC3700] hover:from-[#CC3700] hover:to-[#FF4500] text-white border-0 rounded-2xl neon-glow-orange font-bold shadow-2xl hover:scale-105 transition-all duration-300"
                   onClick={scrollToProducts}
                 >
-                  <Zap className="mr-2 h-5 w-5" />
+                  <Zap className="mr-2 h-4 w-4" />
                   Explore Products
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
                 <Button
                   size="lg"
-                  className="group h-16 px-8 text-lg bg-gradient-to-r from-[#ff385c] to-[#cc1a3d] hover:from-[#cc1a3d] hover:to-[#ff385c] text-white border-0 rounded-2xl neon-glow-red font-bold shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="group h-14 px-8 text-lg bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] text-white border-0 rounded-2xl neon-glow-whatsapp font-bold shadow-2xl hover:scale-105 transition-all duration-300"
                   onClick={handleWhatsAppClick}
                 >
-                  <MessageCircle className="mr-2 h-5 w-5" />
+                  <SiWhatsapp className="mr-2 h-5 w-5" />
                   Instant WhatsApp Quote
                 </Button>
               </motion.div>
@@ -131,99 +173,21 @@ const HeroSection2026 = () => {
                 transition={{ delay: 0.7 }}
               >
                 <div className="glass-dark px-4 py-2 rounded-xl">
-                  <p className="text-[#f7d000] font-bold text-2xl">500+</p>
+                  <p className="text-[#FF4500] font-bold text-2xl">500+</p>
                   <p className="text-white/70 text-xs">Clients Worldwide</p>
                 </div>
                 <div className="glass-dark px-4 py-2 rounded-xl">
-                  <p className="text-[#0077ff] font-bold text-2xl">15+</p>
+                  <p className="text-[#0041C2] font-bold text-2xl">15+</p>
                   <p className="text-white/70 text-xs">Years Experience</p>
                 </div>
                 <div className="glass-dark px-4 py-2 rounded-xl">
-                  <p className="text-[#ff385c] font-bold text-2xl">24/7</p>
+                  <p className="text-[#25D366] font-bold text-2xl">24/7</p>
                   <p className="text-white/70 text-xs">Support</p>
                 </div>
               </motion.div>
             </motion.div>
 
-            {/* Right Side - 3D Floating Products */}
-            <motion.div
-              className="hidden lg:flex relative h-[600px] items-center justify-center"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Main Product - Center */}
-              <motion.div
-                className="absolute z-30"
-                animate={{
-                  y: [0, -20, 0],
-                  rotateY: [0, 10, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="glass-card-2026 p-4 rounded-3xl neon-glow-blue hover-3d">
-                  <img
-                    src={temperatureController}
-                    alt="Temperature Controller"
-                    className="w-72 h-72 object-cover rounded-2xl"
-                  />
-                  <div className="mt-4 text-center">
-                    <h3 className="text-white font-bold text-xl">Temperature Controller</h3>
-                    <p className="text-[#0077ff] text-sm">Industry 4.0 Compatible</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Secondary Product - Top Right */}
-              <motion.div
-                className="absolute top-0 right-0 z-20"
-                animate={{
-                  y: [0, -15, 0],
-                  rotateY: [0, -10, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}
-              >
-                <div className="glass-card-2026 p-3 rounded-2xl neon-glow-red hover-3d">
-                  <img
-                    src={proximityImage}
-                    alt="Proximity Sensor"
-                    className="w-48 h-48 object-cover rounded-xl"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Tertiary Product - Bottom Left */}
-              <motion.div
-                className="absolute bottom-0 left-0 z-10"
-                animate={{
-                  y: [0, -10, 0],
-                  rotateY: [0, 15, 0]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                <div className="glass-card-2026 p-3 rounded-2xl neon-glow-yellow hover-3d">
-                  <img
-                    src={speedIndicator}
-                    alt="Speed Indicator"
-                    className="w-48 h-48 object-cover rounded-xl"
-                  />
-                </div>
-              </motion.div>
-            </motion.div>
+            {/* Right Side removed: spline background provides visual scene */}
 
           </div>
         </div>
