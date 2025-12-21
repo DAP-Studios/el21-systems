@@ -1,43 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import ParticlesBackground from './ParticlesBackground';
 import { motion } from 'framer-motion';
-// removed static floating product images per design; spline-viewer used as background
 
 const HeroSection2026 = () => {
-  const splineRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    // Dynamically load spline viewer script
-    const existing = document.querySelector('script[data-spline-viewer]');
-    if (!existing) {
-      const s = document.createElement('script');
-      s.setAttribute('type', 'module');
-      s.setAttribute('data-spline-viewer', '1');
-      s.src = 'https://unpkg.com/@splinetool/viewer@1.12.13/build/spline-viewer.js';
-      document.body.appendChild(s);
-    }
-
-    // create spline-viewer element inside the splineRef container
-    const container = splineRef.current;
-    if (container) {
-      // Clear previous children
-      container.innerHTML = '';
-      const el = document.createElement('spline-viewer');
-      el.setAttribute('url', 'https://prod.spline.design/qyFhITKvkCV8VoJd/scene.splinecode');
-      el.style.width = '100%';
-      el.style.height = '100%';
-      el.style.display = 'block';
-      container.appendChild(el);
-    }
-
-    return () => {
-      // cleanup using captured ref
-      if (container) container.innerHTML = '';
-    };
-  }, []);
   const handleWhatsAppClick = () => {
     // EL21 Systems WhatsApp
     window.open('https://wa.me/917859914979?text=Hi, I need a quote for your industrial automation products', '_blank');
@@ -61,8 +29,20 @@ const HeroSection2026 = () => {
   {/* Circuit Overlay */}
   <div className="circuit-overlay absolute inset-0 z-0"></div>
 
-  {/* Spline Viewer Background (replaces dark gradient) */}
-  <div ref={splineRef} className="absolute inset-0 z-0 pointer-events-none" />
+  {/* Video Background */}
+  <div className="absolute inset-0 z-0 overflow-hidden">
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover opacity-40"
+    >
+      <source src="/hero_video.mp4" type="video/mp4" />
+    </video>
+    {/* Dark overlay for better text readability */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+  </div>
 
       {/* Animated Glow Orbs */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF4500]/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -187,7 +167,7 @@ const HeroSection2026 = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Side removed: spline background provides visual scene */}
+            {/* Right Side - Video background provides visual scene */}
 
           </div>
         </div>
