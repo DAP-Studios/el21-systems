@@ -21,7 +21,7 @@ const HeroSection2026 = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden gradient-animated"
+        className="relative min-h-screen overflow-hidden"
     >
       {/* Particle Animation Background */}
       <ParticlesBackground />
@@ -30,23 +30,25 @@ const HeroSection2026 = () => {
   <div className="circuit-overlay absolute inset-0 z-0"></div>
 
   {/* Video Background */}
-  <div className="absolute inset-0 z-0 overflow-hidden">
-    <video
-      autoPlay
-      muted
-      loop
-      playsInline
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover opacity-40"
-    >
-      <source src="/hero_video.mp4" type="video/mp4" />
-    </video>
-    {/* Dark overlay for better text readability */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+  {/* YouTube iframe Background (autoplay, muted, loop, no controls) */}
+  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    {/* Use the nocookie domain and params to reduce branding; iv_load_policy disables annotations. 
+        The iframe is sized to cover the hero area (inset-0 + w-full h-full) so it scales across viewports. */}
+    <iframe
+      className="absolute inset-0 w-full h-full object-cover"
+      src="https://www.youtube-nocookie.com/embed/HMYjw1YeoLk?autoplay=1&mute=1&controls=0&loop=1&playlist=HMYjw1YeoLk&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
+      title="EL21 Systems Background Video"
+      frameBorder="0"
+      allow="autoplay; encrypted-media; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+    {/* No gradient overlay here per request. If you still need contrast, add a subtle overlay like: 
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" /> */}
   </div>
 
-      {/* Animated Glow Orbs */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-[#FF4500]/20 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0041C2]/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
+  {/* Animated Glow Orbs (kept only blue for subtle depth) */}
+  <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#0041C2]/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="min-h-screen flex items-center justify-center py-20">
