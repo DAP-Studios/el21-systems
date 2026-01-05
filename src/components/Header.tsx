@@ -74,34 +74,28 @@ const Header = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <div
-                className={`bg-gradient-to-br from-dark-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? 'h-10 w-10' : 'h-12 w-12'
-                }`}
-              >
-                <img
-                  src={logoImg}
-                  alt="El 21 Systems Logo"
-                  className={`object-contain transition-all duration-300 ${
+              <div className="flex flex-col items-center justify-center space-y-1 group">
+                <div
+                  className={`bg-gradient-to-br from-dark-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
                     isScrolled ? 'h-10 w-10' : 'h-12 w-12'
                   }`}
-                />
-              </div>
-              <div
-                className={`transition-all duration-300 ${
-                  isScrolled ? 'scale-90' : 'scale-100'
-                }`}
-              >
+                >
+                  <img
+                    src={logoImg}
+                    alt="El 21 Systems Logo"
+                    className={`object-contain transition-all duration-300 ${
+                      isScrolled ? 'h-10 w-10' : 'h-12 w-12'
+                    }`}
+                  />
+                </div>
                 <h1
-                  className={`font-black bg-gradient-to-r from-secondary via-accent-purple to-accent-cyan bg-clip-text text-transparent transition-all duration-300 ${
+                  style={{ fontFamily: 'Arial, sans-serif' }}
+                  className={`font-black bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent transition-all duration-300 ${
                     isScrolled ? 'text-xl' : 'text-2xl'
                   }`}
                 >
-                  El 21 Systems
+                  Systems
                 </h1>
-                <p className="text-xs text-muted-foreground font-medium">
-                  Temperature Control Solutions
-                </p>
               </div>
             </Link>
 
@@ -149,21 +143,6 @@ const Header = () => {
               </Link>
             </nav>
 
-            {/* CTA Button */}
-            {/* <div className="hidden md:flex items-center space-x-4">
-              <Button 
-                className="bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Get Quote
-              </Button>
-            </div> */}
-
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
@@ -174,7 +153,6 @@ const Header = () => {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-
         </div>
       </header>
 
