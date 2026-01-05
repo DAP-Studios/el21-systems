@@ -1,72 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const socialLinks = [
-  { icon: Facebook, href: 'https://www.facebook.com/share/1AjjsyKnwi/', label: 'Facebook', color: '#0041C2' },
-  { icon: Instagram, href: 'https://www.instagram.com/el21_systems?igsh=NjhwNzEycnIyYjQx', label: 'Instagram', color: '#FF4500' },
-  { icon: Youtube, href: 'https://www.youtube.com/@ShaileshRathod-c6c', label: 'YouTube', color: '#FF4500' },
-];
+import logoImg from '/assets/image/name.png';
 
 /**
- * Header component displays the main navigation bar and logo for El 21 Systems.
- * Features: responsive design, mobile menu, contact info, scroll effects
+ * Header component – clean, stable, no scroll resize
+ * Logo + text same size, Times New Roman
  */
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   
   const location = useLocation();
-  const firstMobileLinkRef = React.useRef<HTMLAnchorElement>(null);
+  const firstMobileLinkRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
+  const isActive = (path) => location.pathname === path;
 
-  const isActive = (path: string) => location.pathname === path;
-
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Focus management for accessibility
+  // Accessibility: focus first link on open
   useEffect(() => {
     if (isMenuOpen && firstMobileLinkRef.current) {
       firstMobileLinkRef.current.focus();
     }
   }, [isMenuOpen]);
 
-  // Close mobile menu on escape key
+  // Close mobile menu on ESC
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsMenuOpen(false);
-      }
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
     };
-
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
     <>
-      {/* Mobile Menu Overlay */}
+      {/* Mobile overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
         />
       )}
 
       {/* Main Header */}
-      <header className={`bg-[#021526]/95 border-b border-white/10 sticky top-0 z-50 backdrop-blur-lg transition-all duration-300 flex items-center justify-center ${
+      <header className={`bg-white/95 border-b border-border/50 sticky top-0 z-50 backdrop-blur-lg transition-all duration-300 flex items-center justify-center ${
         isScrolled ? 'shadow-xl h-14' : 'shadow-lg h-16'
       }`}>
         <div className="container mx-auto px-4">
@@ -75,59 +55,72 @@ const Header = () => {
             <Link
               to="/"
               className="flex items-center space-x-3 group"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Logo-only header: single logo with white background */}
-              <div className="ml-3">
-                <div className="bg-white rounded-md px-2 py-1 flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center space-y-1 group">
+                <div
+                  className={`bg-gradient-to-br from-dark-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 ${
+                    isScrolled ? 'h-10 w-10' : 'h-12 w-12'
+                  }`}
+                >
                   <img
-                    src="/assets/image/logo.png"
+                    src={logoImg}
                     alt="El 21 Systems Logo"
                     className={`object-contain transition-all duration-300 ${
-                      isScrolled ? 'h-10 w-24' : 'h-12 w-28'
+                      isScrolled ? 'h-10 w-10' : 'h-12 w-12'
                     }`}
                   />
                 </div>
+                <h1
+                  style={{ fontFamily: 'Arial, sans-serif' }}
+                  className={`font-black bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent transition-all duration-300 ${
+                    isScrolled ? 'text-xl' : 'text-2xl'
+                  }`}
+                >
+                  Systems
+                </h1>
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                to="/"
+              <Link 
+                to="/" 
                 className={`font-medium transition-colors ${
-                  isActive('/') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
+                  isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
                 Home
               </Link>
-              <Link
-                to="/shop"
+              <Link 
+                to="/shop" 
                 className={`font-medium transition-colors ${
-                  isActive('/shop') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
+                  isActive('/shop') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
                 Shop
               </Link>
-              <Link
-                to="/about"
+              <Link 
+                to="/about" 
                 className={`font-medium transition-colors ${
-                  isActive('/about') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
+                  isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
                 About Us
               </Link>
-              <Link
-                to="/services"
+              <Link 
+                to="/services" 
                 className={`font-medium transition-colors ${
-                  isActive('/services') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
+                  isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
                 Services
               </Link>
-              <Link
-                to="/research"
+              <Link 
+                to="/research" 
                 className={`font-medium transition-colors ${
-                  isActive('/research') ? 'text-[#FF4500]' : 'text-white/90 hover:text-[#FF4500]'
+                  isActive('/research') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
               >
                 R&D
@@ -165,12 +158,11 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* MOBILE BUTTON */}
             <button
               onClick={toggleMenu}
               className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
               aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
             </button>
@@ -180,18 +172,18 @@ const Header = () => {
       </header>
 
       {/* Mobile Navigation Sidebar */}
-      <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-[#021526] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+      <div className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-white/20">
-            <h2 className="text-xl font-bold text-[#FF4500]">
+          <div className="flex items-center justify-between p-6 border-b border-border">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Menu
             </h2>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
               aria-label="Close menu"
             >
               <X className="h-6 w-6 text-white" />
@@ -203,9 +195,9 @@ const Header = () => {
             <Link
               to="/"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/')
-                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
-                  : 'text-white/90 hover:bg-white/10'
+                isActive('/') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
               }`}
               onClick={() => setIsMenuOpen(false)}
               ref={firstMobileLinkRef}
@@ -215,9 +207,9 @@ const Header = () => {
             <Link
               to="/shop"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/shop')
-                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
-                  : 'text-white/90 hover:bg-white/10'
+                isActive('/shop') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -226,9 +218,9 @@ const Header = () => {
             <Link
               to="/about"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/about')
-                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
-                  : 'text-white/90 hover:bg-white/10'
+                isActive('/about') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -237,9 +229,9 @@ const Header = () => {
             <Link
               to="/services"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/services')
-                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
-                  : 'text-white/90 hover:bg-white/10'
+                isActive('/services') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -248,33 +240,19 @@ const Header = () => {
             <Link
               to="/research"
               className={`font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-200 ${
-                isActive('/research')
-                  ? 'bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white'
-                  : 'text-white/90 hover:bg-white/10'
+                isActive('/research') 
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white' 
+                  : 'text-foreground hover:bg-muted'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
               R&D
             </Link>
 
-            {/* Mobile Social Links */}
-            <div className="pt-6 mt-auto space-y-4">
-              <div className="flex justify-center gap-4 pb-4 border-b border-white/20">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-xl glass-card-2026 hover:scale-110 transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-6 w-6" style={{ color: social.color }} />
-                  </a>
-                ))}
-              </div>
-              <Button
-                className="w-full bg-gradient-to-r from-[#FF4500] to-[#0041C2] text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg neon-glow-orange"
+            {/* Mobile CTA Button */}
+            <div className="pt-6 mt-auto">
+              <Button 
+                className="w-full bg-gradient-to-r from-accent-purple to-accent-pink text-white px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
